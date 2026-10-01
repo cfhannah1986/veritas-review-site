@@ -1,8 +1,11 @@
 <!-- DRAFT - DO NOT BUILD YET. At launch: copy this file to site/content/pages/order.md
-     (replacing the waitlist version), rebuild, push. Netlify will register the
-     "manuscript-upload" form on that deploy. Requires: payment_url set in
-     site/config.json, and Form Detection enabled in Netlify (Project
-     configuration > Forms). -->
+     (replacing the waitlist version), rebuild, push. Requires:
+     1. payment_url set in site/config.json (PayPal link),
+     2. R2 bucket "veritas-manuscripts" created in the Cloudflare dashboard,
+     3. R2 bucket binding added to the Pages project: variable MANUSCRIPTS
+        (Workers & Pages > veritas-review-site > Settings > Functions >
+        R2 bucket bindings), then redeploy so the binding takes effect.
+     The upload posts to the /api/order Pages Function in functions/api/order.js. -->
 ---
 title: Order your manuscript review
 description: Order a thorough, evidence-based manuscript review for $14.99. Upload your manuscript and receive your review as PDF and DOCX.
@@ -31,12 +34,10 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 </div>
 
 <h2>Upload your manuscript</h2>
-<p>Accepted formats: DOCX, EPUB, TXT, or PDF. Maximum file size: 8 MB. If your file is larger, email it to <a href="mailto:{{contact_email}}">{{contact_email}}</a> with your transaction ID.</p>
+<p>Accepted formats: DOCX, EPUB, TXT, MD, or PDF. Maximum file size: 15 MB. If your file is larger, email it to <a href="mailto:{{contact_email}}">{{contact_email}}</a> with your transaction ID.</p>
 
-<form name="manuscript-upload" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="waitlist-form">
-<input type="hidden" name="form-name" value="manuscript-upload" />
-<input type="hidden" name="subject" value="New manuscript upload - Veritas Review" />
-<p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+<form id="order-form" class="waitlist-form" enctype="multipart/form-data">
+<p class="hidden"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 <p><label>Your name<br /><input type="text" name="name" required /></label></p>
 <p><label>Email address<br /><input type="email" name="email" required /></label></p>
 <p><label>Book title<br /><input type="text" name="book_title" required /></label></p>
@@ -51,10 +52,12 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 <option>Something else</option>
 </select></label></p>
 <p><label>PayPal transaction ID<br /><input type="text" name="paypal_txn" required placeholder="e.g. 8RC12345AB6789012" /></label></p>
-<p><label>Manuscript file (DOCX, EPUB, TXT, PDF, max 8 MB)<br /><input type="file" name="manuscript" accept=".docx,.epub,.txt,.pdf" required /></label></p>
+<p><label>Manuscript file (DOCX, EPUB, TXT, MD, PDF, max 15 MB)<br /><input type="file" id="manuscript-file" name="manuscript" accept=".docx,.epub,.txt,.md,.pdf" required /></label></p>
 <p><label>Anything we should know? (optional)<br /><input type="text" name="author_notes" /></label></p>
 <p><label><input type="checkbox" name="spotlight_consent" value="yes" /> If my book scores highly, Veritas Review may feature it on the blog with my name and the book's title.</label></p>
-<p><button type="submit" class="btn">Upload manuscript</button></p>
+<p><button type="submit" class="btn" id="order-submit">Upload manuscript</button></p>
+<p id="order-error" class="tiny" style="color:#ff8a8a" hidden></p>
 </form>
+<script src="/static/js/order.js"></script>
 
 <p>Questions? See the <a href="/faq.html">FAQ</a> or <a href="/contact.html">contact us</a>.</p>
