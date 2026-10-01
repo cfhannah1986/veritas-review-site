@@ -26,6 +26,14 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 
 {{ad_slot:home-mid}}
 
+<div class="video-spot">
+<h2>What we do, in six seconds</h2>
+<video autoplay muted loop playsinline preload="metadata" poster="/static/brand/veritas-logo-full.png" aria-label="Veritas Review brand video: honest manuscript reviews for indie authors">
+<source src="/static/brand/veritas-hero.mp4" type="video/mp4">
+</video>
+<p class="tiny muted">A longer walkthrough of our review process is coming soon.</p>
+</div>
+
 <h2 id="how">How it works</h2>
 <div class="steps">
 <div class="step"><span class="step-n">1</span><h3>Order and send your manuscript</h3><p>Pay securely, then email your manuscript as DOCX, PDF, TXT, or EPUB. Tell us the genre and whether we may feature your book on our blog.</p></div>
@@ -74,7 +82,7 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 </div>
 
 <h2>From the blog</h2>
-<div class="cards">
+<div class="blog-cards">
 {{latest_posts}}
 </div>
 <p><a href="/blog/">All posts &rarr;</a></p>

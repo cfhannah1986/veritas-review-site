@@ -246,6 +246,31 @@ details.faq p:last-child { margin-bottom: 0; }
 .post-card h2 a:hover, .post-card h3 a:hover { color: var(--accent); }
 .post-more { margin-top: 2rem; }
 
+/* Blog cards: strict 3-up grid so the third post never orphans */
+.blog-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+  align-items: stretch;
+}
+@media (max-width: 700px) {
+  .blog-cards { grid-template-columns: 1fr; }
+}
+
+/* Video spot */
+.video-spot { margin: 2.5rem 0; text-align: center; }
+.video-spot h2 { margin-bottom: 1rem; }
+.video-spot video {
+  display: block;
+  width: min(720px, 100%);
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--card-edge);
+  box-shadow: 0 0 32px rgba(62, 230, 196, 0.18);
+}
+.video-spot .tiny { margin-top: 0.75rem; }
+
 /* Ad slots: invisible until an AdSense ID is configured */
 .ad-slot { margin: 2rem 0; text-align: center; }
 
