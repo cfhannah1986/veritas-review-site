@@ -7,8 +7,8 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 <p class="eyebrow">Manuscript reviews for indie authors</p>
 <h1>An honest review your manuscript deserves.</h1>
 <p class="lede">Veritas Review reads your entire book and returns a thorough, evidence-based review: characters, plot, pacing, continuity, and theme. Every point tied to a passage in your text. No puff. No guesswork.</p>
-<p><a class="btn" href="/order.html">Get your review, $14.99</a> <a class="btn-ghost" href="#how">How it works</a></p>
-<p class="tiny muted">Launch pricing &middot; PDF + DOCX &middot; 48-hour turnaround</p>
+<p><a class="btn" href="/order.html">Join the waitlist</a> <a class="btn-ghost" href="#how">How it works</a></p>
+<p class="tiny muted">Launching soon &middot; $14.99 launch pricing &middot; PDF + DOCX</p>
 </div>
 
 <div class="trustbar">
@@ -56,11 +56,11 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 <li>Full manuscript read</li>
 <li>Character, plot, pacing, continuity, and theme analysis</li>
 <li>Evidence-based notes with quotes from your text</li>
-<li>PDF and DOCX delivery within 48 hours</li>
+<li>PDF and DOCX delivery</li>
 <li>Private and confidential</li>
 </ul>
-<p><a class="btn" href="/order.html">Order your review</a></p>
-<p class="tiny muted">Launch pricing. The price goes up as our calendar fills.</p>
+<p><a class="btn" href="/order.html">Join the waitlist</a></p>
+<p class="tiny muted">Be first in line at $14.99 launch pricing.</p>
 </div>
 </div>
 
@@ -72,5 +72,5 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 
 <div class="cta">
 <h2>Ready for the truth about your manuscript?</h2>
-<p><a class="btn" href="/order.html">Get your review, $14.99</a></p>
+<p><a class="btn" href="/order.html">Join the waitlist</a></p>
 </div>
