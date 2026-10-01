@@ -31,6 +31,7 @@ description: Join the waitlist for Veritas Review. Honest, evidence-based manusc
 <input type="hidden" name="access_key" value="{{web3forms_key}}" />
 <input type="hidden" name="subject" value="New Veritas Review waitlist signup" />
 <input type="hidden" name="from_name" value="Veritas Review website" />
+<input type="hidden" name="redirect" value="{{site_url}}/thanks.html" />
 <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
 <p><label>Your name<br /><input type="text" name="name" required /></label></p>
 <p><label>Email address<br /><input type="email" name="email" required /></label></p>

@@ -5,8 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{title}} · {{brand}}</title>
 <meta name="description" content="{{description}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{brand}}">
+<meta property="og:title" content="{{title}} · {{brand}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{site_url}}{{page_url}}">
+<meta property="og:image" content="{{site_url}}/static/brand/veritas-logo-full.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}} · {{brand}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{site_url}}/static/brand/veritas-logo-full.jpg">
 <link rel="stylesheet" href="/static/style.css">
-<link rel="icon" type="image/png" href="/static/brand/veritas-flame.png">
+<link rel="icon" type="image/png" href="/static/brand/favicon-32.png">
 {{adsense_head}}
 </head>
 <body>
@@ -34,5 +44,10 @@
   </div>
   <div class="wrap tiny muted">© {{year}} {{brand}}. All rights reserved.</div>
 </footer>
+<script>
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('video[autoplay]').forEach(function (v) { v.pause(); });
+}
+</script>
 </body>
 </html>

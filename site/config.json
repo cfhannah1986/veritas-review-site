@@ -12,5 +12,6 @@
   "turnaround": "within 72 hours (depending on length)",
   "payment_url": "",
   "payment_label": "Pay with PayPal",
-  "web3forms_key": "7ebd6ad7-73d7-442a-baac-1319508fe351"
+  "web3forms_key": "7ebd6ad7-73d7-442a-baac-1319508fe351",
+  "site_url": "https://veritas-review-site.pages.dev"
 }

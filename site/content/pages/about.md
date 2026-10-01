@@ -6,7 +6,7 @@ description: Veritas Review is a GlowPress service offering honest, evidence-bas
 <div class="page-head">
 <p class="eyebrow">About</p>
 <h1>Truth, applied to manuscripts.</h1>
-<img src="/static/brand/veritas-logo-full.png" alt="Veritas Review logo" class="hero-logo-full">
+<img src="/static/brand/veritas-logo-full.jpg" alt="Veritas Review logo" class="hero-logo-full">
 </div>
 
 *Veritas* is Latin for truth. We chose the name because it is the whole business: an honest, evidence-based review of your manuscript, not paid praise and not vague encouragement.

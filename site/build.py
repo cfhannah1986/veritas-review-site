@@ -221,6 +221,13 @@ def render_page(cfg, title, description, body_html, path, prefix=""):
     page = page.replace("{{contact_email}}", html.escape(cfg["contact_email"]))
     page = page.replace("{{web3forms_key}}", html.escape(cfg.get("web3forms_key", "")))
     page = page.replace("{{adsense_head}}", adsense_head(cfg))
+    site_url = cfg.get("site_url", "").rstrip("/")
+    page = page.replace("{{site_url}}", html.escape(site_url))
+    if path == "index.html":
+        page_url = "/"
+    else:
+        page_url = "/" + path.lstrip("/")
+    page = page.replace("{{page_url}}", html.escape(page_url))
 
     def slot(m):
         return ad_slot(cfg, m.group(1))
@@ -331,6 +338,33 @@ def build(prefix=""):
         content = content.replace("{{latest_posts}}", latest)
         with open(path, "w", encoding="utf-8") as f:
             f.write(content)
+
+    # Sitemap + robots.txt
+    site_url = cfg.get("site_url", "").rstrip("/")
+    if site_url:
+        today = date.today().isoformat()
+        urls = []
+        for fname in sorted(os.listdir(pages_dir)):
+            if not fname.endswith(".md"):
+                continue
+            name = fname[:-3]
+            loc = "/" if name == "index" else f"/{name}.html"
+            urls.append((loc, today))
+        urls.append(("/blog/", today))
+        for p in posts:
+            urls.append((f"/blog/{p['slug']}/", p["date"]))
+        sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+        for loc, lastmod in urls:
+            sm.append("  <url>")
+            sm.append(f"    <loc>{html.escape(site_url + loc)}</loc>")
+            sm.append(f"    <lastmod>{html.escape(lastmod)}</lastmod>")
+            sm.append("  </url>")
+        sm.append("</urlset>")
+        with open(os.path.join(PUBLIC, "sitemap.xml"), "w", encoding="utf-8") as f:
+            f.write("\n".join(sm))
+        with open(os.path.join(PUBLIC, "robots.txt"), "w", encoding="utf-8") as f:
+            f.write(f"User-agent: *\nAllow: /\nSitemap: {site_url}/sitemap.xml\n")
 
     print(f"Built {len(posts)} posts into {PUBLIC}")
 

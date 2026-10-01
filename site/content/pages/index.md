@@ -4,7 +4,7 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 ---
 
 <div class="hero">
-<img class="hero-logo-full" src="/static/brand/veritas-logo-full.png" alt="Veritas Review: professional book and manuscript reviews, a GlowPress service">
+<img class="hero-logo-full" src="/static/brand/veritas-logo-full.jpg" alt="Veritas Review: professional book and manuscript reviews, a GlowPress service">
 <p class="eyebrow">Manuscript reviews for indie authors</p>
 <h1>The honest review your manuscript deserves.</h1>
 <p class="lede">Veritas Review reads your entire book and returns a thorough, evidence-based review: characters, plot, pacing, continuity, and theme. Every point tied to a passage in your text. No puff. No guesswork.</p>
@@ -28,7 +28,7 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 
 <div class="video-spot">
 <h2>What we do, in six seconds</h2>
-<video autoplay muted loop playsinline preload="metadata" poster="/static/brand/veritas-logo-full.png" aria-label="Veritas Review brand video: honest manuscript reviews for indie authors">
+<video autoplay muted loop playsinline preload="metadata" poster="/static/brand/veritas-logo-full.jpg" aria-label="Veritas Review brand video: honest manuscript reviews for indie authors">
 <source src="/static/brand/veritas-hero.mp4" type="video/mp4">
 </video>
 <p class="tiny muted">A longer walkthrough of our review process is coming soon.</p>
