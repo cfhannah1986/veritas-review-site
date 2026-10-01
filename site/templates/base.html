@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}} · {{brand}}</title>
+<meta name="description" content="{{description}}">
+<link rel="stylesheet" href="/static/style.css">
+{{adsense_head}}
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><span class="brand-mark">V</span>{{brand}}</a>
+    <nav class="main-nav">{{nav}}</nav>
+  </div>
+</header>
+<main class="wrap">
+{{content}}
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>{{brand}}</strong><br>
+      <span class="muted">A <a href="https://glowpress.app">GlowPress</a> service.</span>
+    </div>
+    <nav class="foot-nav">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+  <div class="wrap tiny muted">© {{year}} {{brand}}. All rights reserved.</div>
+</footer>
+</body>
+</html>

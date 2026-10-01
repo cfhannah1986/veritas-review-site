@@ -1,0 +1,11 @@
+[build]
+  publish = "site/public"
+  command = "python site/build.py"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug/"
+  status = 301
