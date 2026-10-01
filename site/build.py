@@ -15,6 +15,7 @@ A new blog post is just a Markdown file. The review engine's blurb
 publisher (BookBot repo, scripts/publish_review_blurb.py) writes one
 automatically whenever a finished review is sent to a client.
 """
+import argparse
 import html
 import json
 import os
@@ -205,7 +206,7 @@ def nav_links(cfg):
     ]
 
 
-def render_page(cfg, title, description, body_html, path):
+def render_page(cfg, title, description, body_html, path, prefix=""):
     tpl = load_template("base.html")
     nav = "".join(
         f'<a href="{href}">{label}</a>' for label, href in nav_links(cfg)
@@ -225,12 +226,17 @@ def render_page(cfg, title, description, body_html, path):
 
     page = re.sub(r"\{\{ad_slot:([\w-]+)\}\}", slot, page)
     page = page.replace("{{order_button}}", order_button(cfg))
+    # Make the site work from a subpath (e.g. GitHub Pages project pages).
+    # With prefix="" (domain root) this is a no-op.
+    if prefix:
+        page = page.replace('href="/', f'href="{prefix}/')
+        page = page.replace('src="/', f'src="{prefix}/')
     return page
 
 
 # ---------------------------------------------------------------- build
 
-def build():
+def build(prefix=""):
     cfg = load_config()
     if os.path.exists(PUBLIC):
         shutil.rmtree(PUBLIC)
@@ -249,7 +255,7 @@ def build():
         body_html = render_markdown(body)
         title = meta.get("title", cfg["brand"])
         desc = meta.get("description", cfg["tagline"])
-        html_out = render_page(cfg, title, desc, body_html, out_name)
+        html_out = render_page(cfg, title, desc, body_html, out_name, prefix)
         with open(os.path.join(PUBLIC, out_name), "w", encoding="utf-8") as f:
             f.write(html_out)
 
@@ -278,7 +284,7 @@ def build():
             f"</article>"
         )
         desc = meta.get("description", cfg["tagline"])
-        html_out = render_page(cfg, meta["title"], desc, article, f"blog/{slug}/")
+        html_out = render_page(cfg, meta["title"], desc, article, f"blog/{slug}/", prefix)
         with open(os.path.join(post_dir, "index.html"), "w", encoding="utf-8") as f:
             f.write(html_out)
         posts.append({"slug": slug, "title": meta["title"],
@@ -305,7 +311,7 @@ def build():
         + "\n".join(items)
     )
     with open(os.path.join(blog_dir, "index.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(cfg, "Blog", "Notes from Veritas Review.", blog_body, "blog/"))
+        f.write(render_page(cfg, "Blog", "Notes from Veritas Review.", blog_body, "blog/", prefix))
 
     # Latest-posts snippet for the home page
     latest = "".join(
@@ -328,7 +334,11 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--prefix", default="", help="subpath prefix, e.g. /veritas-review-site")
+    ap.add_argument("--serve", action="store_true")
+    ns, _ = ap.parse_known_args()
+    build(ns.prefix)
     if "--serve" in sys.argv:
         import http.server
         import functools
