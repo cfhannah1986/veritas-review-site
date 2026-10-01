@@ -24,6 +24,10 @@ function cleanFileName(name) {
   return (safe || "manuscript");
 }
 
+export async function onRequestGet() {
+  return json({ ok: false, error: "Method not allowed." }, 405);
+}
+
 export async function onRequestPost({ request, env }) {
   try {
     if (!env.MANUSCRIPTS) {
