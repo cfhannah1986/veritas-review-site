@@ -12,7 +12,7 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 </div>
 
 <div class="trustbar">
-<span>Full-manuscript read</span><span>Evidence-based notes</span><span>Human-checked</span><span>Private and confidential</span>
+<span>Full-manuscript read</span><span>Evidence-based notes</span><span>Personally reviewed</span><span>Private and confidential</span>
 </div>
 
 {{ad_slot:home-mid}}
