@@ -18,4 +18,4 @@ Here is what you get for the $14.99 launch price:
 
 We built this because most manuscript feedback is either too kind to be useful or too vague to act on. A review should leave you knowing exactly what to do next. That is the bar we hold ourselves to, on every manuscript.
 
-We are putting the finishing touches on the review engine now. [Join the waitlist](/order.html) and you'll be first in line when ordering opens.
+We are putting the finishing touches on our review process now. [Join the waitlist](/order.html) and you'll be first in line when ordering opens.

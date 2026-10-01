@@ -14,7 +14,7 @@ description: A look inside our review process: what we evaluate, how claims get 
 
 **Pacing.** Where the book moves and where it drags, with specific passages flagged for tightening or expansion.
 
-**Continuity check.** Contradictions, timeline slips, and details that do not line up. Our engine extracts factual claims from the manuscript and verifies each one against the text, so continuity notes come with quotes, not hunches.
+**Continuity check.** Contradictions, timeline slips, and details that do not line up. Our process extracts factual claims from the manuscript and verifies each one against the text, so continuity notes come with quotes, not hunches.
 
 **Theme and style.** What the book is really about, and whether the prose serves it or fights it.
 
