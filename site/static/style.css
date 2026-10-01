@@ -326,3 +326,16 @@ blockquote {
   margin: 1rem 0 1.25rem;
   border: 1px solid var(--line);
 }
+
+.waitlist-form input[type="file"] {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.6rem 0.7rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
