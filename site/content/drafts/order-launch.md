@@ -11,7 +11,7 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 <div class="page-head">
 <p class="eyebrow">Order</p>
 <h1>Get your review, $14.99</h1>
-<p class="lede">Three steps. Pay, upload your manuscript, and receive an honest review back in your inbox.</p>
+<p class="lede">Pay and upload in one go. Nothing is reviewed until payment clears, and your finished review arrives 2 to 3 days after approval.</p>
 </div>
 
 <div class="order-steps">
@@ -53,6 +53,7 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 <p><label>PayPal transaction ID<br /><input type="text" name="paypal_txn" required placeholder="e.g. 8RC12345AB6789012" /></label></p>
 <p><label>Manuscript file (DOCX, EPUB, TXT, PDF, max 8 MB)<br /><input type="file" name="manuscript" accept=".docx,.epub,.txt,.pdf" required /></label></p>
 <p><label>Anything we should know? (optional)<br /><input type="text" name="author_notes" /></label></p>
+<p><label><input type="checkbox" name="spotlight_consent" value="yes" /> If my book scores highly, Veritas Review may feature it on the blog with my name and the book's title.</label></p>
 <p><button type="submit" class="btn">Upload manuscript</button></p>
 </form>
 

@@ -11,7 +11,7 @@ description: The terms for ordering a manuscript review from Veritas Review.
 
 ## The service
 
-Veritas Review provides written manuscript reviews for a flat fee. Each order covers one manuscript of up to 100,000 words, delivered as PDF and DOCX within 48 hours of receiving the manuscript.
+Veritas Review provides written manuscript reviews for a flat fee. Each order covers one manuscript of up to 100,000 words, delivered as PDF and DOCX, typically 2 to 3 days after your manuscript passes our final quality check, depending on its length. Delivery of the finished review concludes our service agreement for that order.
 
 ## Your manuscript
 
