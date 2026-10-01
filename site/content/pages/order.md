@@ -12,7 +12,7 @@ description: Order a thorough, evidence-based manuscript review for $14.99. PDF 
 <div class="order-steps">
 <div class="order-step">
 <h3>1. Pay securely</h3>
-<p>Checkout is handled by Stripe. We never see or store your card details.</p>
+<p>Checkout is handled securely by our payment provider. We never see or store your card details.</p>
 {{order_button}}
 </div>
 <div class="order-step">

@@ -1,1 +1,15 @@
-{"adsense_client_id":"","base_url":"https://theveritasreview.com","brand":"Veritas Review","company":"GlowPress","company_url":"https://glowpress.app","contact_email":"reviews@theveritasreview.com","domain":"theveritasreview.com","max_words":"100,000","price":"$14.99","stripe_payment_link":"","tagline":"An honest review your manuscript deserves.","turnaround":"48 hours"}
+{
+  "adsense_client_id": "",
+  "base_url": "https://theveritasreview.com",
+  "brand": "Veritas Review",
+  "company": "GlowPress",
+  "company_url": "https://glowpress.app",
+  "contact_email": "reviews@theveritasreview.com",
+  "domain": "theveritasreview.com",
+  "max_words": "100,000",
+  "price": "$14.99",
+  "tagline": "An honest review your manuscript deserves.",
+  "turnaround": "48 hours",
+  "payment_url": "",
+  "payment_label": "Pay with PayPal"
+}

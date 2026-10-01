@@ -12,7 +12,7 @@ evidence-based manuscript reviews for indie authors.
 ```
 site/
   build.py            # static site generator (no dependencies)
-  config.json         # brand, pricing, links, AdSense ID, Stripe link
+  config.json         # brand, pricing, links, AdSense ID, payment link
   templates/base.html # shared header/footer
   static/style.css    # all styling
   content/pages/*.md  # home, order, about, faq, contact, privacy, terms
@@ -42,7 +42,8 @@ a book with the author's explicit permission.
 
 | Key | Purpose |
 |---|---|
-| `stripe_payment_link` | Paste a Stripe Payment Link to enable one-click checkout on the order page. Until set, the order page shows an "order by email" button. |
+| `payment_url` | Paste any payment link (PayPal.Me, Stripe Payment Link, etc.) to enable one-click checkout on the order page. Until set, the order page shows an "order by email" button. |
+| `payment_label` | Button text for the checkout, e.g. "Pay with PayPal". |
 | `adsense_client_id` | Paste your AdSense publisher ID (`ca-pub-...`) to enable the tasteful ad slots (home mid/bottom, blog top, in-article). Until set, slots render as nothing. |
 | `contact_email` | Where order and contact emails go. |
 | `price`, `max_words`, `turnaround` | Business facts shown across the site. |

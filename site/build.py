@@ -177,14 +177,15 @@ def ad_slot(cfg, name):
 
 
 def order_button(cfg):
-    link = cfg.get("stripe_payment_link", "").strip()
+    link = cfg.get("payment_url", "").strip()
+    label = cfg.get("payment_label", "Pay online").strip() or "Pay online"
     price = html.escape(cfg.get("price", "$14.99"))
     if link:
         return (
             f'<p><a class="btn" href="{html.escape(link)}">'
-            f"Pay {price} with Stripe</a></p>\n"
-            f'<p class="tiny muted">Secure checkout. You will receive an '
-            f"email confirmation with your order details.</p>"
+            f"{html.escape(label)}, {price}</a></p>\n"
+            f'<p class="tiny muted">Secure checkout. We never see or store '
+            f"your payment details.</p>"
         )
     return (
         f'<p><a class="btn" href="mailto:{html.escape(cfg["contact_email"])}'
