@@ -1,14 +1,18 @@
-/* Veritas Review - literary, professional, calm */
+/* Veritas Review - GlowPress dark neon theme */
 :root {
-  --paper: #faf7f1;
-  --card: #ffffff;
-  --ink: #23232b;
-  --muted: #6d6d78;
-  --accent: #7b2d26;
-  --accent-dark: #5e211d;
-  --accent-soft: #f5e9e6;
-  --line: #e7ddcd;
-  --gold: #a97e2f;
+  --paper: #05080f;
+  --paper-soft: #090e1a;
+  --card: #0b1220;
+  --card-edge: #1b2740;
+  --ink: #eef4f1;
+  --ink-soft: #c9d6d2;
+  --muted: #8fa3b8;
+  --accent: #3ee6c4;
+  --accent-dark: #1fb598;
+  --accent-soft: rgba(62, 230, 196, 0.08);
+  --accent-glow: rgba(62, 230, 196, 0.45);
+  --line: #1b2740;
+  --gold: #d4a24e;
 }
 
 * { box-sizing: border-box; }
@@ -16,6 +20,9 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--paper);
+  background-image:
+    radial-gradient(1200px 500px at 50% -10%, rgba(62, 230, 196, 0.07), transparent 60%),
+    radial-gradient(900px 420px at 85% 110%, rgba(62, 230, 196, 0.05), transparent 60%);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.65;
@@ -79,33 +86,42 @@ a:hover { color: var(--accent-dark); }
 .main-nav a:hover { color: var(--accent); }
 
 /* Hero */
-.hero { padding: 3.5rem 0 2rem; text-align: left; }
+.hero { padding: 3.5rem 0 2rem; text-align: center; }
+.hero .lede { margin-left: auto; margin-right: auto; }
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.22em;
   font-size: 0.8rem;
-  color: var(--gold);
+  color: var(--accent);
   font-weight: 700;
   margin: 0 0 0.75rem;
 }
-.lede { font-size: 1.2rem; color: #3c3c46; max-width: 34rem; }
+.lede { font-size: 1.2rem; color: var(--ink-soft); max-width: 34rem; }
 .btn {
   display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  padding: 0.8rem 1.6rem;
-  border-radius: 6px;
+  background: transparent;
+  color: var(--accent);
+  padding: 0.8rem 1.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 18px var(--accent-glow), inset 0 0 12px rgba(62, 230, 196, 0.12);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   margin: 0.5rem 0.5rem 0.5rem 0;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
-.btn:hover { background: var(--accent-dark); color: #fff; }
+.btn:hover {
+  background: var(--accent);
+  color: #04120e;
+  box-shadow: 0 0 28px var(--accent-glow);
+}
 .btn-ghost {
   display: inline-block;
-  border: 1px solid var(--line);
-  color: var(--ink);
+  border: 1px solid var(--card-edge);
+  color: var(--ink-soft);
   padding: 0.8rem 1.6rem;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   background: var(--card);
@@ -157,7 +173,7 @@ a:hover { color: var(--accent-dark); }
   padding: 1.25rem;
 }
 .card h3 { margin-top: 0; }
-.card p { margin-bottom: 0; color: #3c3c46; }
+.card p { margin-bottom: 0; color: var(--ink-soft); }
 
 /* Honesty band */
 .honesty {
@@ -262,13 +278,13 @@ details.faq p:last-child { margin-bottom: 0; }
 .foot-nav a:hover { color: var(--accent); }
 .site-footer .tiny { margin-top: 1.5rem; }
 
-code { background: #efe9dc; padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+code { background: #141d33; padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
 hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
 blockquote {
   border-left: 3px solid var(--gold);
   margin: 1.5rem 0;
   padding: 0.5rem 1.25rem;
-  color: #3c3c46;
+  color: var(--ink-soft);
   font-style: italic;
 }
 
@@ -314,26 +330,39 @@ blockquote {
 
 /* GlowPress flavor */
 .brand-logo {
-  height: 2.1rem;
-  width: 2.1rem;
-  object-fit: cover;
-  border-radius: 8px;
-  vertical-align: -0.55rem;
+  height: 2.2rem;
+  width: auto;
+  object-fit: contain;
+  vertical-align: -0.6rem;
   margin-right: 0.45rem;
+  filter: drop-shadow(0 0 6px var(--accent-glow));
 }
-.brand-hero-logo {
+.hero-logo-full {
   display: block;
-  width: 180px;
-  border-radius: 14px;
-  margin: 1.25rem 0 0.5rem;
-  border: 1px solid var(--line);
+  width: min(400px, 82%);
+  height: auto;
+  margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 0 26px rgba(62, 230, 196, 0.28));
 }
-.hero-banner {
+.hero-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+.hero-price { margin: 1.25rem 0 0.25rem; }
+.hero-price strong {
   display: block;
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1.75rem;
-  border: 1px solid var(--line);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+.hero-price span {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
 }
 .pillars {
   display: grid;
@@ -341,7 +370,8 @@ blockquote {
   gap: 1rem;
   margin: 2rem 0;
   text-align: center;
-  background: #101418;
+  background: var(--paper-soft);
+  border: 1px solid var(--card-edge);
   border-radius: 12px;
   padding: 1.75rem 1rem 1.5rem;
 }

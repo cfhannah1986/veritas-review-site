@@ -4,12 +4,13 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 ---
 
 <div class="hero">
-<img class="hero-banner" src="/static/brand/veritas-banner.jpg" alt="Veritas Review: professional book and manuscript reviews, a GlowPress service">
+<img class="hero-logo-full" src="/static/brand/veritas-logo-full.png" alt="Veritas Review: professional book and manuscript reviews, a GlowPress service">
 <p class="eyebrow">Manuscript reviews for indie authors</p>
-<h1>An honest review your manuscript deserves.</h1>
+<h1>The honest review your manuscript deserves.</h1>
 <p class="lede">Veritas Review reads your entire book and returns a thorough, evidence-based review: characters, plot, pacing, continuity, and theme. Every point tied to a passage in your text. No puff. No guesswork.</p>
-<p><a class="btn" href="/order.html">Join the waitlist</a> <a class="btn-ghost" href="#how">How it works</a></p>
-<p class="tiny muted">Launching soon &middot; $14.99 launch pricing &middot; PDF + DOCX</p>
+<p class="hero-price"><span>Launching soon</span><strong>$14.99 launch pricing</strong><span>One manuscript &middot; up to 100,000 words</span></p>
+<p><a class="btn" href="/order.html">JOIN THE WAITLIST</a></p>
+<p><a class="btn-ghost" href="#how">How it works</a></p>
 </div>
 
 <div class="trustbar">
