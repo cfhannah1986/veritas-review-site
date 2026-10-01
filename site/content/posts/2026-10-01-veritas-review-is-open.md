@@ -14,7 +14,7 @@ Here is what you get for the $14.99 launch price:
 - A written review delivered as PDF and DOCX
 - Specific, quotable notes, not vague encouragement
 - A prioritized list of the fixes that would help your book most
-- A human editor checking every review before it reaches you
+- Every review personally checked and approved before it reaches you
 
 We built this because most manuscript feedback is either too kind to be useful or too vague to act on. A review should leave you knowing exactly what to do next. That is the bar we hold ourselves to, on every manuscript.
 

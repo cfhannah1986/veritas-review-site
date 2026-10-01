@@ -21,7 +21,7 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 <div class="steps">
 <div class="step"><span class="step-n">1</span><h3>Order and send your manuscript</h3><p>Pay securely, then email your manuscript as DOCX, PDF, TXT, or EPUB. Tell us the genre and whether we may feature your book on our blog.</p></div>
 <div class="step"><span class="step-n">2</span><h3>We read every word</h3><p>Our review engine analyzes characters, plot, pacing, continuity, and theme across the full manuscript, then verifies every factual claim against your text.</p></div>
-<div class="step"><span class="step-n">3</span><h3>A human editor checks it</h3><p>Every review is checked by a human editor before delivery. You receive it as PDF and DOCX within 48 hours.</p></div>
+<div class="step"><span class="step-n">3</span><h3>A person approves it</h3><p>Every review is personally checked and approved before delivery. You receive it as PDF and DOCX within 48 hours.</p></div>
 </div>
 
 <h2>What is inside every review</h2>

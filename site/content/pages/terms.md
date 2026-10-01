@@ -19,7 +19,7 @@ You must own the rights to any manuscript you submit, or have the author's permi
 
 ## Reviews
 
-Reviews are critical evaluations, not endorsements. A review reflects our honest assessment and does not guarantee publication, sales, or any particular outcome. Reviews may be produced with the assistance of automated systems and are checked by a human editor before delivery.
+Reviews are critical evaluations, not endorsements. A review reflects our honest assessment and does not guarantee publication, sales, or any particular outcome. Reviews may be produced with the assistance of automated systems and are personally checked and approved before delivery.
 
 ## Refunds
 

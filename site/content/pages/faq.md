@@ -9,8 +9,8 @@ description: Answers about Veritas Review manuscript reviews: process, pricing, 
 </div>
 
 <details class="faq">
-<summary>Is the review written by AI?</summary>
-<p>Yes, with human oversight. Our review engine reads your full manuscript, analyzes it, and verifies its claims against your text. A human editor then checks every review before delivery. We are upfront about this because the honesty of the process is the point.</p>
+<summary>How are reviews produced?</summary>
+<p>Each manuscript goes through our structured review process: the full text is read and analyzed, every factual claim is verified against your manuscript, and the finished review is personally checked and approved before delivery. Automated analysis does the heavy lifting; a person signs off on every review. We describe the process openly because the honesty of it is the point.</p>
 </details>
 
 <details class="faq">

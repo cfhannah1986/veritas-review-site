@@ -24,4 +24,4 @@ description: A look inside our review process: what we evaluate, how claims get 
 
 The step that matters most: every factual claim in the review is checked against the manuscript before delivery. If a claim cannot be supported by the text, it is rewritten or removed. What you read is grounded in the book you wrote.
 
-Then a human editor reads the finished review for sense, tone, and fairness. Nothing reaches you unchecked.
+Then the finished review is personally checked for sense, tone, and fairness. Nothing reaches you unchecked.
