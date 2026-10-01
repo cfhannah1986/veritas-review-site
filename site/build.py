@@ -280,7 +280,7 @@ def build(prefix=""):
             f"{{{{ad_slot:post-mid}}}}\n"
             f"{body_html}\n"
             f"{{{{ad_slot:post-bottom}}}}\n"
-            f'<p class="post-more"><a href="/blog/">&larr; All posts</a></p>\n'
+            f'<p class="post-more"><a href="{prefix}/blog/">&larr; All posts</a></p>\n'
             f"</article>"
         )
         desc = meta.get("description", cfg["tagline"])
@@ -296,9 +296,9 @@ def build(prefix=""):
         items.append(
             f'<article class="post-card">\n'
             f'<p class="post-date">{html.escape(p["date"])}</p>\n'
-            f'<h2><a href="/blog/{p["slug"]}/">{html.escape(p["title"])}</a></h2>\n'
+            f'<h2><a href="{prefix}/blog/{p["slug"]}/">{html.escape(p["title"])}</a></h2>\n'
             f"<p>{html.escape(p['description'])}</p>\n"
-            f'<p><a href="/blog/{p["slug"]}/">Read more &rarr;</a></p>\n'
+            f'<p><a href="{prefix}/blog/{p["slug"]}/">Read more &rarr;</a></p>\n'
             f"</article>"
         )
     blog_dir = os.path.join(PUBLIC, "blog")
@@ -317,7 +317,7 @@ def build(prefix=""):
     latest = "".join(
         f'<article class="post-card">\n'
         f'<p class="post-date">{html.escape(p["date"])}</p>\n'
-        f'<h3><a href="/blog/{p["slug"]}/">{html.escape(p["title"])}</a></h3>\n'
+        f'<h3><a href="{prefix}/blog/{p["slug"]}/">{html.escape(p["title"])}</a></h3>\n'
         f"<p>{html.escape(p['description'])}</p>\n"
         f"</article>"
         for p in posts[:3]
