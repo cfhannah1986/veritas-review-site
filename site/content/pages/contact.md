@@ -10,7 +10,7 @@ description: Contact Veritas Review with questions about your manuscript review.
 
 <p>Questions about an order, your manuscript, or the review process? Email us:</p>
 
-<p><strong><a href="mailto:reviews@theveritasreview.com">reviews@theveritasreview.com</a></strong></p>
+<p><strong><a href="mailto:{{contact_email}}">{{contact_email}}</a></strong></p>
 
 <p>We reply within one business day.</p>
 

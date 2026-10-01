@@ -25,4 +25,4 @@ We never sell your information. We never publish your manuscript or any identify
 
 ## Contact
 
-Questions about privacy: <a href="mailto:reviews@theveritasreview.com">reviews@theveritasreview.com</a>.
+Questions about privacy: <a href="mailto:{{contact_email}}">{{contact_email}}</a>.

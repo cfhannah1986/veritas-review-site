@@ -33,4 +33,4 @@ Do not submit content you do not have the right to share, or content that is unl
 
 We may update these terms as the service grows. The version in effect at the time of your order applies to that order.
 
-Questions: <a href="mailto:reviews@theveritasreview.com">reviews@theveritasreview.com</a>.
+Questions: <a href="mailto:{{contact_email}}">{{contact_email}}</a>.

@@ -17,7 +17,7 @@ description: Order a thorough, evidence-based manuscript review for $14.99. PDF 
 </div>
 <div class="order-step">
 <h3>2. Send your manuscript</h3>
-<p>Email your manuscript to <a href="mailto:reviews@theveritasreview.com">reviews@theveritasreview.com</a> as DOCX, PDF, TXT, or EPUB. Include:</p>
+<p>Email your manuscript to <a href="mailto:{{contact_email}}">{{contact_email}}</a> as DOCX, PDF, TXT, or EPUB. Include:</p>
 <ul>
 <li>The title and genre</li>
 <li>Your order confirmation</li>
