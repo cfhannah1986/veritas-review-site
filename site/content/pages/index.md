@@ -27,11 +27,11 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 {{ad_slot:home-mid}}
 
 <div class="video-spot">
-<h2>What we do, in six seconds</h2>
-<video autoplay muted loop playsinline preload="metadata" poster="/static/brand/veritas-logo-full.jpg" aria-label="Veritas Review brand video: honest manuscript reviews for indie authors">
-<source src="/static/brand/veritas-hero.mp4" type="video/mp4">
+<h2>What we do</h2>
+<video controls preload="metadata" poster="/static/brand/veritas-logo-full.jpg" aria-label="Veritas Review explainer video: honest manuscript reviews for indie authors">
+<source src="/static/brand/veritas-explainer.mp4" type="video/mp4">
 </video>
-<p class="tiny muted">A longer walkthrough of our review process is coming soon.</p>
+<p class="tiny muted">Thirty-eight seconds, with captions.</p>
 </div>
 
 <h2 id="how">How it works</h2>
