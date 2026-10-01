@@ -277,3 +277,36 @@ blockquote {
   h1 { font-size: 1.9rem; }
   .hero { padding: 2.5rem 0 1.5rem; }
 }
+
+/* Waitlist form */
+.waitlist-form {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 520px;
+  margin: 1.5rem 0;
+}
+.waitlist-form p { margin: 0 0 1rem; }
+.waitlist-form label { font-weight: 600; font-size: 0.95rem; }
+.waitlist-form input[type="text"],
+.waitlist-form input[type="email"],
+.waitlist-form select {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.6rem 0.7rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.waitlist-form input:focus,
+.waitlist-form select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.waitlist-form .hidden { display: none; }
+.waitlist-form .btn { border: none; cursor: pointer; font-size: 1rem; }
