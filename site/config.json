@@ -11,5 +11,6 @@
   "tagline": "An honest review your manuscript deserves.",
   "turnaround": "within 72 hours (depending on length)",
   "payment_url": "",
-  "payment_label": "Pay with PayPal"
+  "payment_label": "Pay with PayPal",
+  "web3forms_key": ""
 }

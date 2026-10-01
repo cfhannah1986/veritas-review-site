@@ -219,6 +219,7 @@ def render_page(cfg, title, description, body_html, path, prefix=""):
     page = page.replace("{{content}}", body_html)
     page = page.replace("{{year}}", str(date.today().year))
     page = page.replace("{{contact_email}}", html.escape(cfg["contact_email"]))
+    page = page.replace("{{web3forms_key}}", html.escape(cfg.get("web3forms_key", "")))
     page = page.replace("{{adsense_head}}", adsense_head(cfg))
 
     def slot(m):

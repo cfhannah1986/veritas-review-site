@@ -27,9 +27,11 @@ description: Join the waitlist for Veritas Review. Honest, evidence-based manusc
 <h2>Join the waitlist</h2>
 <p>Leave your email and we'll notify you the moment ordering opens. No spam, one email at launch.</p>
 
-<form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="waitlist-form">
-<input type="hidden" name="form-name" value="waitlist" />
-<p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+<form action="https://api.web3forms.com/submit" method="POST" class="waitlist-form">
+<input type="hidden" name="access_key" value="{{web3forms_key}}" />
+<input type="hidden" name="subject" value="New Veritas Review waitlist signup" />
+<input type="hidden" name="from_name" value="Veritas Review website" />
+<input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
 <p><label>Your name<br /><input type="text" name="name" required /></label></p>
 <p><label>Email address<br /><input type="email" name="email" required /></label></p>
 <p><label>What are you writing? (optional)<br />
