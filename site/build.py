@@ -348,6 +348,8 @@ def build(prefix=""):
             if not fname.endswith(".md"):
                 continue
             name = fname[:-3]
+            if name == "404":
+                continue  # error page: useful to visitors, not to search engines
             loc = "/" if name == "index" else f"/{name}.html"
             urls.append((loc, today))
         urls.append(("/blog/", today))

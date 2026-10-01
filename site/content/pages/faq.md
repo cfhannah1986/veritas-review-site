@@ -19,6 +19,11 @@ description: Answers about Veritas Review manuscript reviews: process, pricing, 
 </details>
 
 <details class="faq">
+<summary>How does turnaround work by manuscript length?</summary>
+<p>Up to 30,000 words: within 48 hours. 30,001 to 70,000 words: within 60 hours. Above 70,000 words: within 72 hours. The clock starts when we receive your manuscript.</p>
+</details>
+
+<details class="faq">
 <summary>What formats do you accept?</summary>
 <p>DOCX, PDF, TXT, and EPUB. If your manuscript is in another format, <a href="/contact.html">ask us</a> and we will usually find a way.</p>
 </details>
