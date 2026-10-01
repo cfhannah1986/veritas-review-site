@@ -326,6 +326,7 @@ def build(prefix=""):
         path = os.path.join(PUBLIC, fname)
         with open(path, encoding="utf-8") as f:
             content = f.read()
+        content = content.replace("<p>{{latest_posts}}</p>", latest)
         content = content.replace("{{latest_posts}}", latest)
         with open(path, "w", encoding="utf-8") as f:
             f.write(content)
