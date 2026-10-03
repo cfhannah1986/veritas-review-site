@@ -14,7 +14,7 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 <div class="page-head">
 <p class="eyebrow">Order</p>
 <h1>Get your review, $14.99</h1>
-<p class="lede">Pay and upload in one go. Nothing is reviewed until payment clears, and your finished review arrives 2 to 3 days after approval.</p>
+<p class="lede">Pay and upload in one go. Nothing is reviewed until payment clears, and your finished review arrives 4 to 7 days after approval, depending on manuscript length.</p>
 </div>
 
 <div class="order-steps">
