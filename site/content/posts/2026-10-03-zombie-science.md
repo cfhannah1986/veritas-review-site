@@ -1,18 +1,18 @@
 ---
 title: We reviewed zombie science and it actually worked
-description: BookBot tackled a scientific paper on Resident Evil pathogens. Here's what happened.
+description: A scientific paper on Resident Evil pathogens, reviewed. Here's what happened.
 date: 2026-10-03
 ---
 
 <div class="page-head">
 <p class="eyebrow">Fun with reviews</p>
 <h1>We reviewed zombie science and it actually worked</h1>
-<p class="lede">Someone sent us a scientific feasibility study of Resident Evil pathogens. We ran it through anyway.</p>
+<p class="lede">Someone sent us a scientific feasibility study of Resident Evil pathogens. We took a look.</p>
 </div>
 
 <p>Veritas Review is built for narrative: novels, memoirs, short stories. But a friend sent us something different, a 3,600-word scientific paper analyzing whether T-virus style pathogens could actually exist.</p>
 
-<p>We figured, why not? Let's see what happens.</p>
+<p>We figured, why not? Let's see what we think.</p>
 
 <hr />
 
