@@ -15,12 +15,12 @@ description: Answers about Veritas Review manuscript reviews: process, pricing, 
 
 <details class="faq">
 <summary>How long does it take?</summary>
-<p>Within 72 hours of receiving your manuscript, depending on length. Most manuscripts under 30,000 words are delivered within 48 hours. If we ever expect a delay, we will tell you before you order.</p>
+<p>Up to 7 days from receiving your manuscript, depending on length. Most manuscripts under 30,000 words are delivered within 4 days. If we ever expect a delay, we will tell you before you order.</p>
 </details>
 
 <details class="faq">
 <summary>How does turnaround work by manuscript length?</summary>
-<p>Up to 30,000 words: within 48 hours. 30,001 to 70,000 words: within 60 hours. Above 70,000 words: within 72 hours. The clock starts when we receive your manuscript.</p>
+<p>Up to 30,000 words: within 4 days. 30,001 to 70,000 words: within 6 days. 70,001 to 100,000 words: within 7 days. The clock starts when we receive your manuscript.</p>
 </details>
 
 <details class="faq">
