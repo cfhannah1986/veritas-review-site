@@ -16,7 +16,7 @@ description: Join the waitlist for Veritas Review. Honest, evidence-based manusc
 </div>
 <div class="order-step">
 <h3>How it works</h3>
-<p>When we launch: pay securely, email your manuscript (DOCX, PDF, TXT, or EPUB), and receive your review within days. Every review is checked by a human before delivery.</p>
+<p>When we launch: pay securely, email your manuscript (DOCX, PDF, TXT, or EPUB), and receive your review within days. Every review goes through a final quality check before delivery.</p>
 </div>
 <div class="order-step">
 <h3>Launch pricing</h3>

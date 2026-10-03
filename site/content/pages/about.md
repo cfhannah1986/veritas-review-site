@@ -17,7 +17,7 @@ Veritas Review reads your entire manuscript and returns a thorough written revie
 
 ## How the review is made
 
-Our review process reads the full manuscript in sections, extracts factual claims about the story (who did what, where, and when), and independently verifies each claim against your text. Claims that cannot be supported are thrown out or rewritten. A literary analysis pass then evaluates character, structure, pacing, and theme. Finally, the finished review is personally checked and approved before it reaches you.
+Our review process reads the full manuscript in sections, extracts factual claims about the story (who did what, where, and when), and independently verifies each claim against your text. Claims that cannot be supported are thrown out or rewritten. A literary analysis pass then evaluates character, structure, pacing, and theme. Finally, the finished review goes through a final quality check for accuracy, tone, and fairness before it reaches you.
 
 The result is a review you can trust: specific, quotable, and grounded in the book you actually wrote.
 
