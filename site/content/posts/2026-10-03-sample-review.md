@@ -20,7 +20,6 @@ date: 2026-10-03
 
 <p>Prince Prospero is depicted as a bold, eccentric ruler who seeks to defy mortality through isolation and aesthetic distraction, contrasting with the nameless, terrifying masked stranger who appears at midnight. The narrative builds tension methodically from the external plague to the internal seclusion, punctuated by the regular hourly interruptions of the ebony clock leading to the climax at midnight when the music and waltzers cease.</p>
 
-<p>Despite these strengths, the true identity and precise nature of the mysterious masked figure remain unresolved. This analytical review remains strictly within the bounds of the provided text, avoiding any unverified claims or excessive extrapolation.</p>
 
 <hr />
 
