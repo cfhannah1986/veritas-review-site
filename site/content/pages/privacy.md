@@ -12,7 +12,7 @@ description: How Veritas Review handles your personal information and your manus
 ## What we collect
 
 - **Order information:** your name, email address, and payment confirmation, needed to deliver your review. Payments are processed by Stripe; we never see or store your card details.
-- **Your manuscript:** used only to produce your review. It is never shared, published, sold, or used to train models.
+- **Your manuscript:** used only to produce your review. It is never shared, published, or sold.
 - **Site analytics:** basic, anonymized visit statistics.
 
 ## Advertising
