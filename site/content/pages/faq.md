@@ -15,12 +15,7 @@ description: Answers about Veritas Review manuscript reviews: process, pricing, 
 
 <details class="faq">
 <summary>How long does it take?</summary>
-<p>Up to 7 days after your review passes our final quality check, depending on length. Most manuscripts under 30,000 words are delivered within 4 days of that point. If we ever expect a delay, we will tell you before you order.</p>
-</details>
-
-<details class="faq">
-<summary>How does turnaround work by manuscript length?</summary>
-<p>Up to 30,000 words: within 4 days. 30,001 to 70,000 words: within 6 days. 70,001 to 100,000 words: within 7 days. The clock starts when your review passes our final quality check.</p>
+<p>Your review is delivered within 14 days of purchase. From the moment you pay, the clock is running. During periods of high demand, turnaround may be longer. We will notify you if your review will take more than 14 days.</p>
 </details>
 
 <details class="faq">
