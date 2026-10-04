@@ -1,18 +1,18 @@
 ---
-title: We reviewed zombie science and it actually worked
-description: A scientific paper on Resident Evil pathogens, reviewed. Here's what happened.
+title: Can Resident Evil pathogens actually exist? We reviewed the science.
+description: A scientific paper on Resident Evil pathogens, reviewed.
 date: 2026-10-03
 ---
 
 <div class="page-head">
 <p class="eyebrow">Fun with reviews</p>
-<h1>We reviewed zombie science and it actually worked</h1>
-<p class="lede">Someone sent us a scientific feasibility study of Resident Evil pathogens. We took a look.</p>
+<h1>Can Resident Evil pathogens actually exist? We reviewed the science.</h1>
+<p class="lede">A 3,600-word scientific paper asking whether T-virus style pathogens could be real.</p>
 </div>
 
-<p>Veritas Review is built for narrative: novels, memoirs, short stories. But a friend sent us something different, a 3,600-word scientific paper analyzing whether T-virus style pathogens could actually exist.</p>
+<p>We usually review novels, memoirs, and short stories. But a friend sent us something different: a scientific feasibility study of Resident Evil pathogens, analyzing the biology behind reanimation, rapid mutation, and parasitic augmentation.</p>
 
-<p>We figured, why not? Let's see what we think.</p>
+<p>Here's our take.</p>
 
 <hr />
 
@@ -28,11 +28,11 @@ date: 2026-10-03
 
 <hr />
 
-<h2>What we learned</h2>
+<h2>Why this matters</h2>
 
-<p>The review didn't try to force narrative concepts (character arcs, plot structure) onto a scientific paper. It evaluated the work on its own terms: scientific rigor, logical organization, communication effectiveness.</p>
+<p>A good review meets the manuscript where it is. This paper wasn't trying to tell a story, so we didn't evaluate it like one. We looked at scientific rigor, logical organization, and how well it communicates complex ideas.</p>
 
-<p>That's the point. A good review meets the manuscript where it is.</p>
+<p>That's what we do with every manuscript: evaluate it on its own terms.</p>
 
 <p><a class="btn" href="/order.html">Join the waitlist</a></p>
 
