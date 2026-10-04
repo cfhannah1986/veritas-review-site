@@ -10,7 +10,7 @@ description: Answers about Veritas Review manuscript reviews: process, pricing, 
 
 <details class="faq">
 <summary>How are reviews produced?</summary>
-<p>Each manuscript goes through our structured review process: the full text is read and analyzed, every factual claim is verified against your manuscript, and the finished review goes through a final quality check before delivery. We describe the process openly because the honesty of it is the point.</p>
+<p>We read your full manuscript carefully and write a thorough review covering character, plot, pacing, and craft. Every point is tied to a specific passage in your text. Before delivery, each review gets a final quality check for accuracy, tone, and fairness.</p>
 </details>
 
 <details class="faq">
