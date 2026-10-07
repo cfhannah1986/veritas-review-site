@@ -72,6 +72,20 @@ export async function onRequestPost({ request, env }) {
     if (!ALLOWED_EXT.has(ext))
       return json({ ok: false, error: "Accepted formats: PDF, DOCX, TXT, MD, or EPUB." }, 400);
 
+    // Word count gate: max 100,000 words. Check TXT/MD directly;
+    // other formats are checked by the pipeline at ingest time.
+    const MAX_WORDS = 100000;
+    if (ext === "txt" || ext === "md") {
+      const text = await file.text();
+      const words = text.trim().split(/\s+/).filter(Boolean).length;
+      if (words > MAX_WORDS) {
+        return json(
+          { ok: false, error: "Your manuscript has " + words.toLocaleString() + " words; maximum is 100,000 words. Please submit a shorter manuscript." },
+          400
+        );
+      }
+    }
+
     const orderId = crypto.randomUUID();
     const safeName = cleanFileName(origName) + "." + ext;
     const keyBase = "orders/" + orderId;

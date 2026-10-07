@@ -34,7 +34,7 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 </div>
 
 <h2>Upload your manuscript</h2>
-<p>Accepted formats: DOCX, EPUB, TXT, MD, or PDF. Maximum file size: 15 MB. If your file is larger, email it to <a href="mailto:{{contact_email}}">{{contact_email}}</a> with your transaction ID.</p>
+<p>Accepted formats: DOCX, EPUB, TXT, MD, or PDF. Maximum file size: 15 MB. <strong>Maximum 100,000 words.</strong> If your file is larger, email it to <a href="mailto:{{contact_email}}">{{contact_email}}</a> with your transaction ID.</p>
 
 <form id="order-form" class="waitlist-form" enctype="multipart/form-data">
 <p class="hidden"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
@@ -51,8 +51,10 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 <option>Memoir</option>
 <option>Something else</option>
 </select></label></p>
+<p><label>Manuscript file (DOCX, EPUB, TXT, MD, PDF, max 15 MB, max 100,000 words)<br /><input type="file" id="manuscript-file" name="manuscript" accept=".docx,.epub,.txt,.md,.pdf" required /></label></p>
+<p id="word-count-display" class="tiny" hidden></p>
 <p><label>PayPal transaction ID<br /><input type="text" name="paypal_txn" required placeholder="e.g. 8RC12345AB6789012" /></label></p>
-<p><label>Manuscript file (DOCX, EPUB, TXT, MD, PDF, max 15 MB)<br /><input type="file" id="manuscript-file" name="manuscript" accept=".docx,.epub,.txt,.md,.pdf" required /></label></p>
+<p class="tiny" style="color:#888">Pay only after your manuscript passes the word count check above. If your book is over 100,000 words, the upload button will stay disabled.</p>
 <p><label>Anything we should know? (optional)<br /><input type="text" name="author_notes" /></label></p>
 <p><label><input type="checkbox" name="spotlight_consent" value="yes" /> If my book scores highly, Veritas Review may feature it on the blog with my name and the book's title.</label></p>
 <p><button type="submit" class="btn" id="order-submit">Upload manuscript</button></p>
