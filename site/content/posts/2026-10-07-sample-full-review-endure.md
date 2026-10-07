@@ -10,7 +10,7 @@ date: 2026-10-07
 <p class="lede">A complete 1,500-word Veritas Review of a 51,000-word memoir. Every claim grounded in the text, with specific quotes, numeric scores, and actionable suggestions.</p>
 </div>
 
-<p><em>This is a real review of Cory Hannah's memoir <em>Endure</em>. Shared with the author's permission as an example of what every Veritas Review delivers.</em></p>
+<p><em>Sample review of <em>Endure</em> by Cory Hannah, shared with the author's permission.</em></p>
 
 <hr />
 
