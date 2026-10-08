@@ -5,7 +5,10 @@
      3. R2 bucket binding added to the Pages project: variable MANUSCRIPTS
         (Workers & Pages > veritas-review-site > Settings > Functions >
         R2 bucket bindings), then redeploy so the binding takes effect.
-     The upload posts to the /api/order Pages Function in functions/api/order.js. -->
+     Flow: /api/order validates the manuscript (max 100,000 words) BEFORE
+     payment; /api/confirm attaches the PayPal transaction ID afterwards.
+     Abandoned awaiting-payment uploads are purged after 48 hours by
+     scripts/cleanup_unpaid.py in the engine repo. -->
 ---
 title: Order your manuscript review
 description: Order a thorough, evidence-based manuscript review for $14.99. Upload your manuscript and receive your review as PDF and DOCX.
@@ -14,18 +17,17 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 <div class="page-head">
 <p class="eyebrow">Order</p>
 <h1>Get your review, $14.99</h1>
-<p class="lede">Pay and upload in one go. Nothing is reviewed until payment clears, and your finished review arrives within 14 days of purchase.</p>
+<p class="lede">Upload first, pay second. Your manuscript is checked against the 100,000 word limit before you pay anything, and your finished review arrives within 14 days of purchase.</p>
 </div>
 
 <div class="order-steps">
 <div class="order-step">
-<h3>1. Pay securely</h3>
-<p>Checkout is handled securely by PayPal. We never see or store your card details.</p>
-{{order_button}}
+<h3>1. Upload your manuscript</h3>
+<p>Use the form below. We count the words on the spot: if the manuscript is over 100,000 words, you will know before paying, and nothing is stored.</p>
 </div>
 <div class="order-step">
-<h3>2. Upload your manuscript</h3>
-<p>Use the upload form below after paying. Include your PayPal transaction ID so we can match your payment to your manuscript.</p>
+<h3>2. Pay securely</h3>
+<p>Once your manuscript is accepted, the PayPal checkout appears. Checkout is handled securely by PayPal; we never see or store your card details. Come back to this page and enter your PayPal transaction ID to finish.</p>
 </div>
 <div class="order-step">
 <h3>3. Receive your review</h3>
@@ -34,7 +36,7 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 </div>
 
 <h2>Upload your manuscript</h2>
-<p>Accepted formats: DOCX, EPUB, TXT, MD, or PDF. Maximum file size: 15 MB. <strong>Maximum 100,000 words.</strong> If your file is larger, email it to <a href="mailto:{{contact_email}}">{{contact_email}}</a> with your transaction ID.</p>
+<p>Accepted formats: DOCX, EPUB, TXT, MD, or PDF. Maximum file size: 15 MB. <strong>Maximum 100,000 words.</strong> Questions before you order? Email <a href="mailto:{{contact_email}}">{{contact_email}}</a>.</p>
 
 <form id="order-form" class="waitlist-form" enctype="multipart/form-data">
 <p class="hidden"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
@@ -53,13 +55,22 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 </select></label></p>
 <p><label>Manuscript file (DOCX, EPUB, TXT, MD, PDF, max 15 MB, max 100,000 words)<br /><input type="file" id="manuscript-file" name="manuscript" accept=".docx,.epub,.txt,.md,.pdf" required /></label></p>
 <p id="word-count-display" class="tiny" hidden></p>
-<p><label>PayPal transaction ID<br /><input type="text" name="paypal_txn" required placeholder="e.g. 8RC12345AB6789012" /></label></p>
-<p class="tiny" style="color:#888">Pay only after your manuscript passes the word count check above. If your book is over 100,000 words, the upload button will stay disabled.</p>
 <p><label>Anything we should know? (optional)<br /><input type="text" name="author_notes" /></label></p>
 <p><label><input type="checkbox" name="spotlight_consent" value="yes" /> If my book scores highly, Veritas Review may feature it on the blog with my name and the book's title.</label></p>
-<p><button type="submit" class="btn" id="order-submit">Upload manuscript</button></p>
+<p><button type="submit" class="btn" id="order-submit">Check my manuscript</button></p>
 <p id="order-error" class="tiny" style="color:#ff8a8a" hidden></p>
 </form>
+
+<div id="payment-step" hidden>
+<h2>Your manuscript is accepted</h2>
+<p id="accepted-note" class="tiny"></p>
+<p>Pay $14.99 with PayPal, then paste the transaction ID from your PayPal receipt below to complete your order. Keep this page open while you pay.</p>
+{{order_button}}
+<p><label>PayPal transaction ID<br /><input type="text" id="paypal-txn" placeholder="e.g. 8RC12345AB6789012" /></label></p>
+<p><button type="button" class="btn" id="confirm-submit">Complete my order</button></p>
+<p id="confirm-error" class="tiny" style="color:#ff8a8a" hidden></p>
+</div>
+
 <script src="/static/js/order.js"></script>
 
 <p>Questions? See the <a href="/faq.html">FAQ</a> or <a href="/contact.html">contact us</a>.</p>
