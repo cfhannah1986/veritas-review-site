@@ -1,18 +1,3 @@
-<!-- DRAFT - DO NOT BUILD YET. At launch: copy this file to site/content/pages/order.md
-     (replacing the waitlist version), rebuild, push. Requires:
-     1. payment_url set in site/config.json (PayPal link),
-     2. R2 bucket "veritas-manuscripts" created in the Cloudflare dashboard,
-     3. R2 bucket binding added to the Pages project: variable MANUSCRIPTS
-        (Workers & Pages > veritas-review-site > Settings > Functions >
-        R2 bucket bindings), then redeploy so the binding takes effect.
-     Flow: /api/order validates the manuscript (max 100,000 words) BEFORE
-     payment; the PayPal Smart Button then creates and captures the
-     payment via /api/paypal/create and /api/paypal/capture, which verify
-     the amount and order binding server-side. Requires Cloudflare env
-     vars PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_MODE (sandbox
-     until launch) and paypal_client_id_* set in site/config.json.
-     Abandoned awaiting-payment uploads are purged after 48 hours by
-     scripts/cleanup_unpaid.py in the engine repo. -->
 ---
 title: Order your manuscript review
 description: Order a thorough, evidence-based manuscript review for $14.99. Upload your manuscript and receive your review as PDF and DOCX.
