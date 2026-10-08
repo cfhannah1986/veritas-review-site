@@ -1,5 +1,10 @@
 {
   "adsense_client_id": "",
+  "adsense_slots": {
+    "home-bottom": "",
+    "blog-top": "",
+    "post-bottom": ""
+  },
   "base_url": "https://theveritasreview.com",
   "brand": "Veritas Review",
   "company": "GlowPress",

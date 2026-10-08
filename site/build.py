@@ -166,12 +166,13 @@ def adsense_head(cfg):
 
 def ad_slot(cfg, name):
     client = cfg.get("adsense_client_id", "").strip()
-    if not client:
+    slot_id = str(cfg.get("adsense_slots", {}).get(name, "")).strip()
+    if not client or not slot_id:
         return ""
     return (
         f'<div class="ad-slot">\n'
         f'<ins class="adsbygoogle" style="display:block" data-ad-client="{client}"\n'
-        f'     data-ad-slot="{name}" data-ad-format="auto" data-full-width-responsive="true"></ins>\n'
+        f'     data-ad-slot="{html.escape(slot_id)}" data-ad-format="auto" data-full-width-responsive="true"></ins>\n'
         f'<script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>\n'
         f"</div>"
     )
@@ -290,7 +291,6 @@ def build(prefix=""):
             f'<article class="post">\n'
             f'<p class="post-date">{html.escape(meta["date"])}</p>\n'
             f"<h1>{html.escape(meta['title'])}</h1>\n"
-            f"{{{{ad_slot:post-mid}}}}\n"
             f"{body_html}\n"
             f"{{{{ad_slot:post-bottom}}}}\n"
             f'<p class="post-more"><a href="{prefix}/blog/">&larr; All posts</a></p>\n'

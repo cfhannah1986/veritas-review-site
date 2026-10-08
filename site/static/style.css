@@ -436,3 +436,6 @@ blockquote {
   border: 1px solid var(--line);
   border-radius: 6px;
 }
+
+/* AdSense slots: quiet, centered, only rendered when configured. */
+.ad-slot { margin: 2.5rem auto; max-width: 728px; min-height: 90px; text-align: center; }

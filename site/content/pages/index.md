@@ -24,8 +24,6 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 <div><img src="/static/brand/icon-reviews.png" alt=""><p>Professional reviews</p></div>
 </div>
 
-{{ad_slot:home-mid}}
-
 <div class="video-spot">
 <h2>What we do</h2>
 <video controls preload="metadata" poster="/static/brand/veritas-logo-full.jpg" aria-label="Veritas Review explainer video: honest manuscript reviews for indie authors">
