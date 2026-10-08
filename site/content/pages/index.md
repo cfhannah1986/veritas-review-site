@@ -8,8 +8,8 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 <p class="eyebrow">Manuscript reviews for indie authors</p>
 <h1>The honest review your manuscript deserves.</h1>
 <p class="lede">Veritas Review reads your entire book and returns a thorough, evidence-based review: characters, plot, pacing, continuity, and theme. Every point tied to a passage in your text. No puff. No guesswork.</p>
-<p class="hero-price"><span>Launching soon</span><strong>$14.99 launch pricing</strong><span>One manuscript &middot; up to 100,000 words</span></p>
-<p><a class="btn" href="/order.html">JOIN THE WAITLIST</a></p>
+<p class="hero-price"><span>Now open</span><strong>$14.99 per review</strong><span>One manuscript &middot; up to 100,000 words</span></p>
+<p><a class="btn" href="/order.html">ORDER YOUR REVIEW</a></p>
 <p><a class="btn-ghost" href="#how">How it works</a></p>
 </div>
 
@@ -75,7 +75,7 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 <li>Private and confidential</li>
 </ul>
 <p><a class="btn" href="/order.html">Order your review</a></p>
-<p class="tiny muted">Launch pricing: $14.99. Ordering is open now.</p>
+<p class="tiny muted">Now open: $14.99 per manuscript review.</p>
 </div>
 </div>
 

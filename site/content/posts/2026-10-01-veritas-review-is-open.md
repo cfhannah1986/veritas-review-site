@@ -1,7 +1,7 @@
 ---
-title: Veritas Review is launching soon
+title: Veritas Review is open
 date: 2026-10-01
-description: Veritas Review is launching soon: honest, evidence-based manuscript reviews for indie authors at $14.99 launch pricing. Ordering is open now.
+description: Veritas Review is open: honest, evidence-based manuscript reviews for indie authors at $14.99. Ordering is open now.
 ---
 
 Veritas Review is almost here.

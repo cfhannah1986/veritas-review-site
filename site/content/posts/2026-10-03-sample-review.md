@@ -39,4 +39,4 @@ date: 2026-10-03
 
 <p><a class="btn" href="/order.html">Order your review</a></p>
 
-<p class="muted">Launch pricing: $14.99. Ordering is open now.</p>
+<p class="muted">Now open: $14.99 per manuscript review.</p>

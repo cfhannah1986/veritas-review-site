@@ -320,7 +320,7 @@ blockquote {
   .pillars { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Waitlist form */
+/* Order / waitlist form */
 .waitlist-form {
   background: var(--card);
   border: 1px solid var(--line);
