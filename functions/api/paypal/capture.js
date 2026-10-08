@@ -101,7 +101,11 @@ export async function onRequestPost({ request, env }) {
     const cap = captures[0] || {};
     const checks = {
       order_status_completed: captured.status === "COMPLETED",
-      custom_id_matches: unit.custom_id === orderId,
+      // PayPal does not echo custom_id in capture responses; it returns
+      // reference_id, which we set to the same order UUID at create time.
+      // Accept either field as the binding proof.
+      order_binding_matches:
+        unit.reference_id === orderId || unit.custom_id === orderId,
       capture_status_completed: cap.status === "COMPLETED",
       amount_matches: !!(cap.amount && cap.amount.value === PRICE),
       currency_usd: !!(cap.amount && cap.amount.currency_code === "USD"),
