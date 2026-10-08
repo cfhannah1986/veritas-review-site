@@ -106,7 +106,7 @@
             .then(function (r) { return r.json(); })
             .then(function (d) {
               if (d && d.ok) {
-                window.location.href = "/thanks";
+                window.location.href = "/order-received";
               } else {
                 payFail((d && d.error) || "The payment could not be completed. Please try again.");
               }
