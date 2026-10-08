@@ -99,14 +99,27 @@ export async function onRequestPost({ request, env }) {
     const captures =
       (unit.payments && unit.payments.captures) || [];
     const cap = captures[0] || {};
-    const verified =
-      captured.status === "COMPLETED" &&
-      unit.custom_id === orderId &&
-      cap.status === "COMPLETED" &&
-      cap.amount &&
-      cap.amount.value === PRICE &&
-      cap.amount.currency_code === "USD";
+    const checks = {
+      order_status_completed: captured.status === "COMPLETED",
+      custom_id_matches: unit.custom_id === orderId,
+      capture_status_completed: cap.status === "COMPLETED",
+      amount_matches: !!(cap.amount && cap.amount.value === PRICE),
+      currency_usd: !!(cap.amount && cap.amount.currency_code === "USD"),
+    };
+    const verified = Object.values(checks).every(Boolean);
     if (!verified) {
+      // Record the raw PayPal response so the mismatch can be diagnosed
+      // from storage instead of guessed at. Deleted once resolved.
+      try {
+        await env.MANUSCRIPTS.put(
+          "orders/" + orderId + "/capture-debug.json",
+          JSON.stringify(
+            { at: new Date().toISOString(), checks: checks, captured: captured },
+            null, 2
+          ),
+          { httpMetadata: { contentType: "application/json" } }
+        );
+      } catch { /* diagnostics must never block the response */ }
       return json(
         { ok: false, error: "The payment could not be verified. If you were charged, contact us and we will sort it out." },
         422
