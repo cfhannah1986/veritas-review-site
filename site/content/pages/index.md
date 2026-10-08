@@ -74,8 +74,8 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 <li>PDF and DOCX delivery</li>
 <li>Private and confidential</li>
 </ul>
-<p><a class="btn" href="/order.html">Join the waitlist</a></p>
-<p class="tiny muted">Be first in line at $14.99 launch pricing.</p>
+<p><a class="btn" href="/order.html">Order your review</a></p>
+<p class="tiny muted">Launch pricing: $14.99. Ordering is open now.</p>
 </div>
 </div>
 
@@ -87,5 +87,5 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 
 <div class="cta">
 <h2>Ready for the truth about your manuscript?</h2>
-<p><a class="btn" href="/order.html">Join the waitlist</a></p>
+<p><a class="btn" href="/order.html">Order your review</a></p>
 </div>

@@ -37,6 +37,6 @@ date: 2026-10-03
 
 <p>That's the Veritas standard. Evidence, not vibes.</p>
 
-<p><a class="btn" href="/order.html">Join the waitlist</a></p>
+<p><a class="btn" href="/order.html">Order your review</a></p>
 
-<p class="muted">Launch pricing: $14.99. Waitlist members get first access.</p>
+<p class="muted">Launch pricing: $14.99. Ordering is open now.</p>
