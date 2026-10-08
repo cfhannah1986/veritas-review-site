@@ -1,41 +1,54 @@
+<!-- DRAFT - DO NOT BUILD YET. At launch: copy this file to site/content/pages/order.md
+     (replacing the waitlist version), rebuild, push. Requires:
+     1. payment_url set in site/config.json (PayPal link),
+     2. R2 bucket "veritas-manuscripts" created in the Cloudflare dashboard,
+     3. R2 bucket binding added to the Pages project: variable MANUSCRIPTS
+        (Workers & Pages > veritas-review-site > Settings > Functions >
+        R2 bucket bindings), then redeploy so the binding takes effect.
+     Flow: /api/order validates the manuscript (max 100,000 words) BEFORE
+     payment; the PayPal Smart Button then creates and captures the
+     payment via /api/paypal/create and /api/paypal/capture, which verify
+     the amount and order binding server-side. Requires Cloudflare env
+     vars PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_MODE (sandbox
+     until launch) and paypal_client_id_* set in site/config.json.
+     Abandoned awaiting-payment uploads are purged after 48 hours by
+     scripts/cleanup_unpaid.py in the engine repo. -->
 ---
-title: Veritas Review is launching soon
-description: Join the waitlist for Veritas Review. Honest, evidence-based manuscript reviews launching soon at $14.99.
+title: Order your manuscript review
+description: Order a thorough, evidence-based manuscript review for $14.99. Upload your manuscript and receive your review as PDF and DOCX.
 ---
 
 <div class="page-head">
-<p class="eyebrow">Coming soon</p>
-<h1>Veritas Review launches soon</h1>
-<p class="lede">Honest, evidence-based manuscript reviews. Launch pricing: <strong>$14.99</strong>. Join the waitlist and be first in line.</p>
+<p class="eyebrow">Order</p>
+<h1>Get your review, $14.99</h1>
+<p class="lede">Upload first, pay second. Your manuscript is checked against the 100,000 word limit before you pay anything, and your finished review arrives within 14 days of purchase.</p>
 </div>
 
 <div class="order-steps">
 <div class="order-step">
-<h3>What you get</h3>
-<p>Your full manuscript read end to end, then a written review covering plot, character, pacing, and craft, with every claim tied to the text. Delivered as PDF and DOCX.</p>
+<h3>1. Upload your manuscript</h3>
+<p>Use the form below. We count the words on the spot: if the manuscript is over 100,000 words, you will know before paying, and nothing is stored.</p>
 </div>
 <div class="order-step">
-<h3>How it works</h3>
-<p>When we launch: pay securely, email your manuscript (DOCX, PDF, TXT, or EPUB), and receive your review within 14 days. Every review goes through a final quality check before delivery.</p>
+<h3>2. Pay securely</h3>
+<p>Once your manuscript is accepted, the PayPal checkout button appears right on this page. Click it, pay in PayPal's secure window, and you are done. Checkout is handled by PayPal; we never see or store your card details.</p>
 </div>
 <div class="order-step">
-<h3>Launch pricing</h3>
-<p>Reviews will be <strong>$14.99</strong> at launch. Waitlist members get first access before the price goes up.</p>
+<h3>3. Receive your review</h3>
+<p>Your manuscript goes through our structured review process, gets a final careful read, and arrives as PDF and DOCX.</p>
 </div>
 </div>
 
-<h2>Join the waitlist</h2>
-<p>Leave your email and we'll notify you the moment ordering opens. No spam, one email at launch.</p>
+<h2>Upload your manuscript</h2>
+<p>Accepted formats: DOCX, EPUB, TXT, MD, or PDF. Maximum file size: 15 MB. <strong>Maximum 100,000 words.</strong> Questions before you order? Email <a href="mailto:{{contact_email}}">{{contact_email}}</a>.</p>
 
-<form action="https://api.web3forms.com/submit" method="POST" class="waitlist-form">
-<input type="hidden" name="access_key" value="{{web3forms_key}}" />
-<input type="hidden" name="subject" value="New Veritas Review waitlist signup" />
-<input type="hidden" name="from_name" value="Veritas Review website" />
-<input type="hidden" name="redirect" value="{{site_url}}/thanks.html" />
-<input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+<form id="order-form" class="waitlist-form" enctype="multipart/form-data">
+<p class="hidden"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 <p><label>Your name<br /><input type="text" name="name" required /></label></p>
 <p><label>Email address<br /><input type="email" name="email" required /></label></p>
-<p><label>What are you writing? (optional)<br />
+<p><label>Book title<br /><input type="text" name="book_title" required /></label></p>
+<p><label>Author name<br /><input type="text" name="author_name" required /></label></p>
+<p><label>Genre (optional)<br />
 <select name="genre">
 <option value="">Choose one</option>
 <option>Novel</option>
@@ -44,7 +57,23 @@ description: Join the waitlist for Veritas Review. Honest, evidence-based manusc
 <option>Memoir</option>
 <option>Something else</option>
 </select></label></p>
-<p><button type="submit" class="btn">Notify me at launch</button></p>
+<p><label>Manuscript file (DOCX, EPUB, TXT, MD, PDF, max 15 MB, max 100,000 words)<br /><input type="file" id="manuscript-file" name="manuscript" accept=".docx,.epub,.txt,.md,.pdf" required /></label></p>
+<p id="word-count-display" class="tiny" hidden></p>
+<p><label>Anything we should know? (optional)<br /><input type="text" name="author_notes" /></label></p>
+<p><label><input type="checkbox" name="spotlight_consent" value="yes" /> If my book scores highly, Veritas Review may feature it on the blog with my name and the book's title.</label></p>
+<p><button type="submit" class="btn" id="order-submit">Check my manuscript</button></p>
+<p id="order-error" class="tiny" style="color:#ff8a8a" hidden></p>
 </form>
+
+<div id="payment-step" hidden>
+<h2>Your manuscript is accepted</h2>
+<p id="accepted-note" class="tiny"></p>
+<p>One step left: pay $14.99 with the PayPal button below. A secure PayPal window opens right here; when the payment completes, your order is finished. No codes to copy, nothing else to fill in.</p>
+<div id="paypal-buttons"></div>
+<p id="confirm-error" class="tiny" style="color:#ff8a8a" hidden></p>
+</div>
+
+<script>window.VERITAS_PAYPAL_CLIENT_ID = "{{paypal_client_id}}";</script>
+<script src="/static/js/order.js"></script>
 
 <p>Questions? See the <a href="/faq.html">FAQ</a> or <a href="/contact.html">contact us</a>.</p>
