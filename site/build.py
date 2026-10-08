@@ -220,6 +220,11 @@ def render_page(cfg, title, description, body_html, path, prefix=""):
     page = page.replace("{{year}}", str(date.today().year))
     page = page.replace("{{contact_email}}", html.escape(cfg["contact_email"]))
     page = page.replace("{{web3forms_key}}", html.escape(cfg.get("web3forms_key", "")))
+    paypal_mode = cfg.get("paypal_mode", "sandbox")
+    paypal_client_id = cfg.get(
+        "paypal_client_id_live" if paypal_mode == "live" else "paypal_client_id_sandbox", "")
+    page = page.replace("{{paypal_client_id}}", html.escape(paypal_client_id))
+    page = page.replace("{{paypal_mode}}", html.escape(paypal_mode))
     page = page.replace("{{adsense_head}}", adsense_head(cfg))
     site_url = cfg.get("site_url", "").rstrip("/")
     page = page.replace("{{site_url}}", html.escape(site_url))

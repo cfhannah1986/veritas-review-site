@@ -6,9 +6,12 @@
 // feedback. If the manuscript is rejected, nothing is stored and the
 // customer never sees the payment step.
 //
-// Step 2: once /api/order accepts the manuscript, the payment section is
-// revealed. The customer pays via the PayPal button, pastes the
-// transaction ID, and POSTs JSON to /api/confirm to complete the order.
+// Step 2: once /api/order accepts the manuscript, the PayPal checkout
+// button is rendered. The customer pays in PayPal's popup without leaving
+// the page; our server creates and captures the payment via
+// /api/paypal/create and /api/paypal/capture and verifies the amount
+// and order binding server-side. The customer never handles a
+// transaction ID.
 (function () {
   var form = document.getElementById("order-form");
   if (!form) return;
@@ -19,9 +22,7 @@
   var wordCountDisplay = document.getElementById("word-count-display");
   var paymentStep = document.getElementById("payment-step");
   var acceptedNote = document.getElementById("accepted-note");
-  var confirmBtn = document.getElementById("confirm-submit");
-  var confirmErr = document.getElementById("confirm-error");
-  var txnInput = document.getElementById("paypal-txn");
+  var payError = document.getElementById("confirm-error");
   var MAX_BYTES = 15 * 1024 * 1024;
   var MAX_WORDS = 100000;
   var orderId = null;
@@ -31,6 +32,11 @@
     err.hidden = false;
     btn.disabled = false;
     btn.textContent = "Check my manuscript";
+  }
+
+  function payFail(msg) {
+    payError.textContent = msg;
+    payError.hidden = false;
   }
 
   // Instant browser-side pre-check for plain-text formats only. The
@@ -60,6 +66,66 @@
     }
   });
 
+  function renderPayPalButton() {
+    var clientId = window.VERITAS_PAYPAL_CLIENT_ID || "";
+    if (!clientId) {
+      payFail("Payment is not available yet. Please contact us to complete your order.");
+      return;
+    }
+    var sdk = document.createElement("script");
+    sdk.src = "https://www.paypal.com/sdk/js?client-id=" +
+      encodeURIComponent(clientId) + "&currency=USD&intent=capture";
+    sdk.onload = function () {
+      if (!window.paypal) {
+        payFail("The PayPal button failed to load. Please refresh the page and try again.");
+        return;
+      }
+      window.paypal.Buttons({
+        createOrder: function () {
+          return fetch("/api/paypal/create", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ order_id: orderId }),
+          })
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+              if (d && d.ok && d.paypal_order_id) return d.paypal_order_id;
+              throw new Error((d && d.error) || "create failed");
+            })
+            .catch(function (e) {
+              payFail(e.message || "PayPal could not start the payment. Please try again.");
+              throw e;
+            });
+        },
+        onApprove: function (data) {
+          return fetch("/api/paypal/capture", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ order_id: orderId, paypal_order_id: data.orderID }),
+          })
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+              if (d && d.ok) {
+                window.location.href = "/thanks";
+              } else {
+                payFail((d && d.error) || "The payment could not be completed. Please try again.");
+              }
+            })
+            .catch(function () {
+              payFail("Network error completing the payment. If you were charged, contact us and we will sort it out.");
+            });
+        },
+        onError: function () {
+          payFail("Something went wrong with PayPal. Please try again.");
+        },
+      }).render("#paypal-buttons");
+    };
+    sdk.onerror = function () {
+      payFail("The PayPal button failed to load. Please check your connection and refresh the page.");
+    };
+    document.head.appendChild(sdk);
+  }
+
   form.addEventListener("submit", function (ev) {
     ev.preventDefault();
     err.hidden = true;
@@ -86,52 +152,13 @@
             " words - within the 100,000 word limit. Your reference: " + orderId;
           paymentStep.hidden = false;
           paymentStep.scrollIntoView({ behavior: "smooth", block: "start" });
+          renderPayPalButton();
         } else {
           fail((data && data.error) || "Upload failed. Please try again.");
         }
       })
       .catch(function () {
         fail("Network error. Please check your connection and try again.");
-      });
-  });
-
-  confirmBtn.addEventListener("click", function () {
-    confirmErr.hidden = true;
-    var txn = (txnInput.value || "").trim();
-    if (!orderId) {
-      confirmErr.textContent = "Your manuscript has not been accepted yet.";
-      confirmErr.hidden = false;
-      return;
-    }
-    if (!txn) {
-      confirmErr.textContent = "Please enter your PayPal transaction ID.";
-      confirmErr.hidden = false;
-      return;
-    }
-    confirmBtn.disabled = true;
-    confirmBtn.textContent = "Completing...";
-    fetch("/api/confirm", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ order_id: orderId, paypal_txn: txn }),
-    })
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data && data.ok) {
-          window.location.href = "/thanks";
-        } else {
-          confirmErr.textContent =
-            (data && data.error) || "Could not complete the order. Please try again.";
-          confirmErr.hidden = false;
-          confirmBtn.disabled = false;
-          confirmBtn.textContent = "Complete my order";
-        }
-      })
-      .catch(function () {
-        confirmErr.textContent = "Network error. Please check your connection and try again.";
-        confirmErr.hidden = false;
-        confirmBtn.disabled = false;
-        confirmBtn.textContent = "Complete my order";
       });
   });
 })();

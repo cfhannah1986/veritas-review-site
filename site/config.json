@@ -13,5 +13,8 @@
   "payment_url": "https://www.paypal.com/ncp/payment/8TNT66E3BH6KJ",
   "payment_label": "Pay $14.99 with PayPal",
   "web3forms_key": "7ebd6ad7-73d7-442a-baac-1319508fe351",
+  "paypal_mode": "sandbox",
+  "paypal_client_id_sandbox": "BAABFwYR-c7cCRUtD7i4_oRtGuC7jIpWzylUp-0uV3kU3rThB4o_RRahE6Jls9wD2GzqDCmw_QKaFHN-fE",
+  "paypal_client_id_live": "",
   "site_url": "https://veritas-review-site.pages.dev"
 }

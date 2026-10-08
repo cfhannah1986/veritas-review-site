@@ -6,7 +6,11 @@
         (Workers & Pages > veritas-review-site > Settings > Functions >
         R2 bucket bindings), then redeploy so the binding takes effect.
      Flow: /api/order validates the manuscript (max 100,000 words) BEFORE
-     payment; /api/confirm attaches the PayPal transaction ID afterwards.
+     payment; the PayPal Smart Button then creates and captures the
+     payment via /api/paypal/create and /api/paypal/capture, which verify
+     the amount and order binding server-side. Requires Cloudflare env
+     vars PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_MODE (sandbox
+     until launch) and paypal_client_id_* set in site/config.json.
      Abandoned awaiting-payment uploads are purged after 48 hours by
      scripts/cleanup_unpaid.py in the engine repo. -->
 ---
@@ -27,7 +31,7 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 </div>
 <div class="order-step">
 <h3>2. Pay securely</h3>
-<p>Once your manuscript is accepted, the PayPal checkout appears. Checkout is handled securely by PayPal; we never see or store your card details. Come back to this page and enter your PayPal transaction ID to finish.</p>
+<p>Once your manuscript is accepted, the PayPal checkout button appears right on this page. Click it, pay in PayPal's secure window, and you are done. Checkout is handled by PayPal; we never see or store your card details.</p>
 </div>
 <div class="order-step">
 <h3>3. Receive your review</h3>
@@ -64,13 +68,12 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 <div id="payment-step" hidden>
 <h2>Your manuscript is accepted</h2>
 <p id="accepted-note" class="tiny"></p>
-<p>Pay $14.99 with PayPal, then paste the transaction ID from your PayPal receipt below to complete your order. Keep this page open while you pay.</p>
-{{order_button}}
-<p><label>PayPal transaction ID<br /><input type="text" id="paypal-txn" placeholder="e.g. 8RC12345AB6789012" /></label></p>
-<p><button type="button" class="btn" id="confirm-submit">Complete my order</button></p>
+<p>One step left: pay $14.99 with the PayPal button below. A secure PayPal window opens right here; when the payment completes, your order is finished. No codes to copy, nothing else to fill in.</p>
+<div id="paypal-buttons"></div>
 <p id="confirm-error" class="tiny" style="color:#ff8a8a" hidden></p>
 </div>
 
+<script>window.VERITAS_PAYPAL_CLIENT_ID = "{{paypal_client_id}}";</script>
 <script src="/static/js/order.js"></script>
 
 <p>Questions? See the <a href="/faq.html">FAQ</a> or <a href="/contact.html">contact us</a>.</p>
