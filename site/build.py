@@ -355,7 +355,7 @@ def build(prefix=""):
             name = fname[:-3]
             if name == "404":
                 continue  # error page: useful to visitors, not to search engines
-            loc = "/" if name == "index" else f"/{name}.html"
+            loc = "/" if name == "index" else f"/{name}"
             urls.append((loc, today))
         urls.append(("/blog/", today))
         for p in posts:
