@@ -46,7 +46,7 @@ The prose avoids clinical detachment and flowery melodrama alike, leaning into d
 
 ### Continuity
 
-Continuity across the manuscript is meticulously handled. Baird tracks clinical milestones, surgical interventions, and family developments across a decade of medical interventions with impressive consistency. The narrative begins with the workplace collapse in 2013 and carries through surgical procedures, diagnostic dead ends, and device trials up through 2023. Family milestones, financial pressures, and the narrator's deteriorating physical baseline remain carefully aligned throughout the chronology, ensuring that the reader never loses track of the cumulative toll that a decade of chronic suffering extracts from the household.
+Continuity across the manuscript is meticulously handled. Baird tracks clinical milestones, surgical interventions, and family developments across a decade of medical interventions with impressive consistency. The narrative begins with the workplace collapse in 2013 and carries through surgical procedures, diagnostic dead ends, and device trials up through 2026. Family milestones, financial pressures, and the narrator's deteriorating physical baseline remain carefully aligned throughout the chronology, ensuring that the reader never loses track of the cumulative toll that a decade of chronic suffering extracts from the household.
 
 ### Scores
 
@@ -54,7 +54,7 @@ Continuity across the manuscript is meticulously handled. Baird tracks clinical 
 - **Plot and Structure: 7/10**, The narrative trajectory through escalating medical crises is coherent and grounded, though cycling between timeline recalls and essayistic interludes occasionally blunts forward drive.
 - **Pacing: 6/10**, Granular focus on "five-to-ten-minute intervals" and stagnant clinic visits accurately reflects life with chronic illness, but several reflective interludes slow momentum excessively.
 - **Prose: 9/10**, The prose excels in somatic clarity, translating complex neurological sensations through stark metaphors like "intense electric burning sensation" and "fire spreading through dry grass."
-- **Continuity: 8/10**, Surgical procedures, clinical entries, and family milestones remain rigorously aligned across dates from the 2013 scaffold collapse through stimulator trials in 2023.
+- **Continuity: 8/10**, Surgical procedures, clinical entries, and family milestones remain rigorously aligned across dates from the 2013 scaffold collapse through stimulator trials and into the clinical entries of 2026.
 - **Overall: 8/10**, A deeply affecting, technically grounded account of nerve damage and fatherhood that prioritizes domestic endurance over clean medical resolutions.
 
 ### Final Verdict
