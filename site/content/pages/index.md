@@ -14,7 +14,7 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 </div>
 
 <div class="trustbar">
-<span>Full-manuscript read</span><span>Evidence-based notes</span><span>Personally reviewed</span><span>Private and confidential</span>
+<span>Full-manuscript read</span><span>Evidence-based notes</span><span>Final quality check</span><span>Private and confidential</span>
 </div>
 
 <div class="pillars">
@@ -34,7 +34,7 @@ description: Veritas Review reads your entire manuscript and returns a thorough,
 
 <h2 id="how">How it works</h2>
 <div class="steps">
-<div class="step"><span class="step-n">1</span><h3>Order and send your manuscript</h3><p>Pay securely, then email your manuscript as DOCX, PDF, TXT, or EPUB. Tell us the genre and whether we may feature your book on our blog.</p></div>
+<div class="step"><span class="step-n">1</span><h3>Upload your manuscript</h3><p>Upload it right on the order page as DOCX, PDF, TXT, MD, or EPUB. We count the words and check it against the 100,000 word limit before you pay anything. Tell us the genre and whether we may feature your book on our blog.</p></div>
 <div class="step"><span class="step-n">2</span><h3>We read every word</h3><p>Our structured review covers characters, plot, pacing, continuity, and theme across the full manuscript, then verifies every factual claim against your text.</p></div>
 <div class="step"><span class="step-n">3</span><h3>Nothing ships unchecked</h3><p>Every review goes through a final quality check for accuracy, tone, and fairness before it reaches you. You receive it as PDF and DOCX within 14 days of purchase.</p></div>
 </div>

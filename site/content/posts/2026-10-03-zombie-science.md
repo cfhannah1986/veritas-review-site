@@ -1,6 +1,6 @@
 ---
 title: Can Resident Evil pathogens actually exist? We reviewed the science.
-description: A scientific paper on Resident Evil pathogens, reviewed.
+description: A fun one-off read of a scientific paper on Resident Evil pathogens. Not a service we sell; just curiosity.
 date: 2026-10-03
 ---
 
@@ -11,6 +11,8 @@ date: 2026-10-03
 </div>
 
 <p>We usually review novels, memoirs, and short stories. But a friend sent us something different: a scientific feasibility study of Resident Evil pathogens, analyzing the biology behind reanimation, rapid mutation, and parasitic augmentation.</p>
+
+<p>One ground rule before we start: this was a one-off bit of fun. Veritas Review accepts fiction and narrative nonfiction only, and we do not review scientific or academic papers.</p>
 
 <p>Here's our take.</p>
 
@@ -33,6 +35,8 @@ date: 2026-10-03
 <p>A good review meets the manuscript where it is. This paper wasn't trying to tell a story, so we didn't evaluate it like one. We looked at scientific rigor, logical organization, and how well it communicates complex ideas.</p>
 
 <p>That's what we do with every manuscript: evaluate it on its own terms.</p>
+
+<p>And to be clear about scope: papers like this one are not something you can order. What you can order is the same honest, evidence-based read for your novel, memoir, or narrative nonfiction.</p>
 
 <p><a class="btn" href="/order.html">Order your review</a></p>
 

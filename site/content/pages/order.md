@@ -40,22 +40,23 @@ description: Order a thorough, evidence-based manuscript review for $14.99. Uplo
 <option>Novella</option>
 <option>Short stories</option>
 <option>Memoir</option>
+<option>Narrative nonfiction</option>
 <option>Something else</option>
 </select></label></p>
 <p><label>Manuscript file (DOCX, EPUB, TXT, MD, PDF, max 15 MB, max 100,000 words)<br /><input type="file" id="manuscript-file" name="manuscript" accept=".docx,.epub,.txt,.md,.pdf" required /></label></p>
-<p id="word-count-display" class="tiny" hidden></p>
+<p id="word-count-display" class="tiny" role="status" aria-live="polite" hidden></p>
 <p><label>Anything we should know? (optional)<br /><input type="text" name="author_notes" /></label></p>
 <p><label><input type="checkbox" name="spotlight_consent" value="yes" /> If my book scores highly, Veritas Review may feature it on the blog with my name and the book's title.</label></p>
 <p><button type="submit" class="btn" id="order-submit">Check my manuscript</button></p>
-<p id="order-error" class="tiny" style="color:#ff8a8a" hidden></p>
+<p id="order-error" class="tiny" role="alert" style="color:#ff8a8a" hidden></p>
 </form>
 
-<div id="payment-step" hidden>
+<div id="payment-step" hidden tabindex="-1">
 <h2>Your manuscript is accepted</h2>
 <p id="accepted-note" class="tiny"></p>
 <p>One step left: pay $14.99 with the PayPal button below. A secure PayPal window opens right here; when the payment completes, your order is finished. No codes to copy, nothing else to fill in.</p>
 <div id="paypal-buttons"></div>
-<p id="confirm-error" class="tiny" style="color:#ff8a8a" hidden></p>
+<p id="confirm-error" class="tiny" role="alert" style="color:#ff8a8a" hidden></p>
 </div>
 
 <script>window.VERITAS_PAYPAL_CLIENT_ID = "{{paypal_client_id}}";</script>

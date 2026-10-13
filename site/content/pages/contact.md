@@ -14,4 +14,4 @@ description: Contact Veritas Review with questions about your manuscript review.
 
 <p>We reply within one business day.</p>
 
-<p class="muted tiny">Please do not send your manuscript until you have placed an order. See <a href="/order.html">how to order</a>.</p>
+<p class="muted tiny">Please do not send your manuscript until you have placed an order, unless we have arranged it with you by email first (for example, a file over the 15 MB upload limit). See <a href="/order.html">how to order</a>.</p>

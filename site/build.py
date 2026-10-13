@@ -178,25 +178,6 @@ def ad_slot(cfg, name):
     )
 
 
-def order_button(cfg):
-    link = cfg.get("payment_url", "").strip()
-    label = cfg.get("payment_label", "Pay online").strip() or "Pay online"
-    price = html.escape(cfg.get("price", "$14.99"))
-    if link:
-        return (
-            f'<p><a class="btn" href="{html.escape(link)}">'
-            f"{html.escape(label)}, {price}</a></p>\n"
-            f'<p class="tiny muted">Secure checkout. We never see or store '
-            f"your payment details.</p>"
-        )
-    return (
-        f'<p><a class="btn" href="mailto:{html.escape(cfg["contact_email"])}'
-        f'?subject=Review%20order">Order by email</a></p>\n'
-        f'<p class="tiny muted">Online checkout opens at launch. '
-        f"Email us to place your order today.</p>"
-    )
-
-
 def nav_links(cfg):
     return [
         ("Home", "/"),
@@ -207,7 +188,7 @@ def nav_links(cfg):
     ]
 
 
-def render_page(cfg, title, description, body_html, path, prefix=""):
+def render_page(cfg, title, description, body_html, path, prefix="", robots_meta=""):
     tpl = load_template("base.html")
     nav = "".join(
         f'<a href="{href}">{label}</a>' for label, href in nav_links(cfg)
@@ -227,6 +208,7 @@ def render_page(cfg, title, description, body_html, path, prefix=""):
     page = page.replace("{{paypal_client_id}}", html.escape(paypal_client_id))
     page = page.replace("{{paypal_mode}}", html.escape(paypal_mode))
     page = page.replace("{{adsense_head}}", adsense_head(cfg))
+    page = page.replace("{{robots_meta}}", robots_meta)
     site_url = cfg.get("site_url", "").rstrip("/")
     page = page.replace("{{site_url}}", html.escape(site_url))
     if path == "index.html":
@@ -239,7 +221,6 @@ def render_page(cfg, title, description, body_html, path, prefix=""):
         return ad_slot(cfg, m.group(1))
 
     page = re.sub(r"\{\{ad_slot:([\w-]+)\}\}", slot, page)
-    page = page.replace("{{order_button}}", order_button(cfg))
     # Make the site work from a subpath (e.g. GitHub Pages project pages).
     # With prefix="" (domain root) this is a no-op.
     if prefix:
@@ -269,7 +250,8 @@ def build(prefix=""):
         body_html = render_markdown(body)
         title = meta.get("title", cfg["brand"])
         desc = meta.get("description", cfg["tagline"])
-        html_out = render_page(cfg, title, desc, body_html, out_name, prefix)
+        robots = '<meta name="robots" content="noindex">' if meta.get("noindex") == "true" else ""
+        html_out = render_page(cfg, title, desc, body_html, out_name, prefix, robots_meta=robots)
         with open(os.path.join(PUBLIC, out_name), "w", encoding="utf-8") as f:
             f.write(html_out)
 
@@ -353,8 +335,8 @@ def build(prefix=""):
             if not fname.endswith(".md"):
                 continue
             name = fname[:-3]
-            if name == "404":
-                continue  # error page: useful to visitors, not to search engines
+            if name in ("404", "order-received", "thanks"):
+                continue  # error, confirmation, and retired pages stay out of the sitemap
             loc = "/" if name == "index" else f"/{name}"
             urls.append((loc, today))
         urls.append(("/blog/", today))
@@ -372,6 +354,8 @@ def build(prefix=""):
             f.write("\n".join(sm))
         with open(os.path.join(PUBLIC, "robots.txt"), "w", encoding="utf-8") as f:
             f.write(f"User-agent: *\nAllow: /\nSitemap: {site_url}/sitemap.xml\n")
+        with open(os.path.join(PUBLIC, "_redirects"), "w", encoding="utf-8") as f:
+            f.write("/thanks /order 301\n/thanks.html /order 301\n")
 
     print(f"Built {len(posts)} posts into {PUBLIC}")
 

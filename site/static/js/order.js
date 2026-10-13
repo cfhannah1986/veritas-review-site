@@ -131,7 +131,7 @@
     err.hidden = true;
 
     if (fileInput.files.length && fileInput.files[0].size > MAX_BYTES) {
-      fail("That file is over 15 MB. Please email it to us instead.");
+      fail("That file is over 15 MB, which is over our upload limit. Email us before ordering and we will arrange a way to receive it.");
       return;
     }
 
@@ -151,6 +151,7 @@
             "Word count: " + Number(data.word_count || 0).toLocaleString() +
             " words - within the 100,000 word limit. Your reference: " + orderId;
           paymentStep.hidden = false;
+          paymentStep.focus({ preventScroll: true });
           paymentStep.scrollIntoView({ behavior: "smooth", block: "start" });
           renderPayPalButton();
         } else {

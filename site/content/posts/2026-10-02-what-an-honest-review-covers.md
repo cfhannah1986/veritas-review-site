@@ -24,4 +24,4 @@ description: What we evaluate in a manuscript review, and why every point is tie
 
 What matters most: everything in the review is tied to your manuscript. If we can't point to the passage, we don't make the claim. What you read is grounded in the book you wrote.
 
-Then the finished review is personally checked for sense, tone, and fairness. Nothing reaches you unchecked.
+Then the finished review goes through a final check for sense, tone, and fairness. Nothing reaches you unchecked.

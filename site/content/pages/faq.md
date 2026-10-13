@@ -20,7 +20,7 @@ description: Answers about Veritas Review manuscript reviews: process, pricing, 
 
 <details class="faq">
 <summary>What formats do you accept?</summary>
-<p>DOCX, PDF, TXT, and EPUB. If your manuscript is in another format, <a href="/contact.html">ask us</a> and we will usually find a way.</p>
+<p>DOCX, PDF, TXT, MD, and EPUB. If your manuscript is in another format, <a href="/contact.html">ask us</a> and we will usually find a way.</p>
 </details>
 
 <details class="faq">

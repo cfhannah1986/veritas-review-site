@@ -1,6 +1,6 @@
 ---
 title: What a Veritas Review actually looks like
-description: A real sample review showing our evidence-based approach. Every claim tied to the text, no vague praise.
+description: A sample review showing our evidence-based approach. Every claim tied to the text, no vague praise.
 date: 2026-10-03
 ---
 
@@ -10,7 +10,7 @@ date: 2026-10-03
 <p class="lede">Most manuscript feedback asks you to take the reviewer's word for it. We show our work.</p>
 </div>
 
-<p>When you're trusting someone with your manuscript, you deserve to know what you're getting. So here's an excerpt from a real review we produced of Edgar Allan Poe's "The Masque of the Red Death" (public domain).</p>
+<p>When you're trusting someone with your manuscript, you deserve to know what you're getting. So here's an excerpt from a review we produced of Edgar Allan Poe's "The Masque of the Red Death" (public domain).</p>
 
 <hr />
 

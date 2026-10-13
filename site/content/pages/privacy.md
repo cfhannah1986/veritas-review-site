@@ -11,13 +11,17 @@ description: How Veritas Review handles your personal information and your manus
 
 ## What we collect
 
-- **Order information:** your name, email address, and payment confirmation, needed to deliver your review. Payments are processed by Stripe; we never see or store your card details.
-- **Your manuscript:** used only to produce your review. It is never shared, published, or sold.
-- **Site analytics:** basic, anonymized visit statistics.
+- **Order information:** your name, email address, book title, author name, genre, and any notes you include with your order, needed to deliver your review.
+- **Payment details:** payments are processed by PayPal. We never see or store your card details. PayPal sends us back a payment confirmation, the transaction ID, and the payer email address attached to the payment, so we can match the payment to your order.
+- **Your manuscript:** uploaded through the order form and stored in secure cloud storage (Cloudflare R2) while your order is processed. It is used only to produce your review. It is never shared, published, or sold.
 
-## Advertising
+## How long we keep it
 
-We may display ads served by Google AdSense. Google may use cookies to serve ads based on your visits to this and other sites. You can opt out of personalized advertising in your Google ad settings.
+Uploads that never complete payment are deleted automatically: abandoned files are removed within days, and unpaid order records within a week. For completed orders, we keep your manuscript and order record while they are needed to support your order. Email us at any time and we will delete your manuscript and order record on request.
+
+## Cookies and third parties
+
+This site does not run analytics and does not use advertising or tracking cookies. When you reach the payment step on the order page, PayPal loads its own checkout script so the payment window can open; what PayPal collects there is covered by PayPal's own privacy policy.
 
 ## What we never do
 

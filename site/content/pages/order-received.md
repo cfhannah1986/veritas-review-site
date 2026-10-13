@@ -1,5 +1,6 @@
 ---
 title: Order received
+noindex: true
 description: Your Veritas Review order is confirmed. Your manuscript review is on its way.
 ---
 
