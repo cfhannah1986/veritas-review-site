@@ -23,9 +23,9 @@ The result is a review you can trust: specific, quotable, and grounded in the bo
 
 ## A GlowPress service
 
-<a href="https://glowpress.pages.dev"><img src="/static/brand/glowpress-banner.jpg" alt="GlowPress" class="gp-banner" /></a>
+<a href="https://glowpressco.com"><img src="/static/brand/glowpress-banner.jpg" alt="GlowPress" class="gp-banner" /></a>
 
-Veritas Review is built and operated by [GlowPress](https://glowpress.pages.dev), an independent studio making useful software for readers and writers.
+Veritas Review is built and operated by [GlowPress](https://glowpressco.com), an independent studio making useful software for readers and writers.
 
 ## What we believe
 

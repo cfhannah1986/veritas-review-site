@@ -6,12 +6,12 @@
     "blog-top": "",
     "post-bottom": ""
   },
-  "base_url": "https://veritas-review-site.pages.dev",
+  "base_url": "https://veritas.glowpressco.com",
   "brand": "Veritas Review",
   "company": "GlowPress",
-  "company_url": "https://glowpress.pages.dev",
+  "company_url": "https://glowpressco.com",
   "contact_email": "GlowPress.Official@gmail.com",
-  "domain": "veritas-review-site.pages.dev",
+  "domain": "veritas.glowpressco.com",
   "max_words": "100,000",
   "price": "$14.99",
   "tagline": "An honest review your manuscript deserves.",
@@ -20,5 +20,5 @@
   "paypal_mode": "live",
   "paypal_client_id_sandbox": "BAABFwYR-c7cCRUtD7i4_oRtGuC7jIpWzylUp-0uV3kU3rThB4o_RRahE6Jls9wD2GzqDCmw_QKaFHN-fE",
   "paypal_client_id_live": "BAAZ1yLKOAmbME2b9fVjsJa1SKDj6Fms_fQWeW9yZtU94ayXMs87-GObgttwesVcxum0kfR-CFt1l3UXFM",
-  "site_url": "https://veritas-review-site.pages.dev"
+  "site_url": "https://veritas.glowpressco.com"
 }

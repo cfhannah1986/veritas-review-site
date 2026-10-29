@@ -23,7 +23,7 @@ Launch details:
 - Your review arrives within 14 days of purchase, sooner for shorter books
 - Private and confidential, always
 
-Order here: https://veritas-review-site.pages.dev/order
+Order here: https://veritas.glowpressco.com/order
 
 Thank you for betting on this early. If your manuscript is ready for the truth, we are ready to read it.
 
@@ -41,8 +41,8 @@ For $14.99 (launch pricing) we read your full manuscript, up to 100,000 words, a
 
 What we do not do: sell five stars, promise outcomes, or review poetry collections and academic papers yet. Fiction and narrative nonfiction only for now.
 
-Sample reviews are on the blog if you want to see exactly what you would get before spending anything: https://veritas-review-site.pages.dev/blog/
+Sample reviews are on the blog if you want to see exactly what you would get before spending anything: https://veritas.glowpressco.com/blog/
 
-Order here: https://veritas-review-site.pages.dev/order
+Order here: https://veritas.glowpressco.com/order
 
 Happy to answer questions about how it works.
