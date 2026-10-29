@@ -164,6 +164,32 @@ def adsense_head(cfg):
     )
 
 
+def meta_pixel_head(cfg):
+    pixel_id = str(cfg.get("meta_pixel_id", "")).strip()
+    if not pixel_id:
+        return "<!-- Meta Pixel: set meta_pixel_id in site/config.json to enable -->"
+    lines = [
+        "<!-- Meta Pixel Code -->",
+        "<script>",
+        "!function(f,b,e,v,n,t,s)",
+        "{if(f.fbq)return;n=f.fbq=function(){n.callMethod?",
+        "n.callMethod.apply(n,arguments):n.queue.push(arguments)};",
+        "if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';",
+        "n.queue=[];t=b.createElement(e);t.async=!0;",
+        "t.src=v;s=b.getElementsByTagName(e)[0];",
+        "s.parentNode.insertBefore(t,s)}(window, document,'script',",
+        "'https://connect.facebook.net/en_US/fbevents.js');",
+        "fbq('init', '" + pixel_id + "');",
+        "fbq('track', 'PageView');",
+        "</script>",
+        '<noscript><img height="1" width="1" style="display:none"',
+        'src="https://www.facebook.com/tr?id=' + pixel_id + '&ev=PageView&noscript=1"',
+        "/></noscript>",
+        "<!-- End Meta Pixel Code -->",
+    ]
+    return "\n".join(lines)
+
+
 def ad_slot(cfg, name):
     client = cfg.get("adsense_client_id", "").strip()
     slot_id = str(cfg.get("adsense_slots", {}).get(name, "")).strip()
@@ -208,6 +234,7 @@ def render_page(cfg, title, description, body_html, path, prefix="", robots_meta
     page = page.replace("{{paypal_client_id}}", html.escape(paypal_client_id))
     page = page.replace("{{paypal_mode}}", html.escape(paypal_mode))
     page = page.replace("{{adsense_head}}", adsense_head(cfg))
+    page = page.replace("{{meta_pixel_head}}", meta_pixel_head(cfg))
     page = page.replace("{{robots_meta}}", robots_meta)
     site_url = cfg.get("site_url", "").rstrip("/")
     page = page.replace("{{site_url}}", html.escape(site_url))

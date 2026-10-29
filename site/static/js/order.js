@@ -106,6 +106,9 @@
             .then(function (r) { return r.json(); })
             .then(function (d) {
               if (d && d.ok) {
+                if (window.fbq) {
+                  try { fbq("track", "Purchase", { value: 14.99, currency: "USD" }); } catch (e) {}
+                }
                 window.location.href = "/order-received";
               } else {
                 payFail((d && d.error) || "The payment could not be completed. Please try again.");
